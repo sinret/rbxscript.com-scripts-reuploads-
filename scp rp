@@ -1,0 +1,678 @@
+-- since skids are mad i rewrote the whole thing without using kiriot hubs esp lib 
+
+-- UI
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local window = library.CreateLib("Novaz#5792", "BloodTheme")
+local main = window:NewTab("Main")
+local autofarm = window:NewTab("Auto Farm")
+local teleports = window:NewTab("Teleports")
+local combat = window:NewTab("Combat")
+local misc = window:NewTab("Misc")
+local main1 = main:NewSection("Main")
+local teleports1 = teleports:NewSection("Area TP")
+local teleports2 = teleports:NewSection("SCP TP")
+local teleports3 = teleports:NewSection("Spawn TP")
+local misc1 = misc:NewSection("LocalPlayer")
+local autofarm1 = autofarm:NewSection("Auto Farm")
+local combat1 = combat:NewSection("Combat")
+local combat2 = combat:NewSection("ESP")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Services 
+
+local uis = game:GetService("UserInputService")
+local runservice = game:GetService("RunService")
+local pathfindingservice = game:GetService("PathfindingService")
+local coregui = game:GetService("CoreGui")
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Other Variables
+
+local plr = game.Players.LocalPlayer
+local playerss = {} 
+local spawns = {}
+local boxes = {}
+local parts = {}
+local mouse = plr:GetMouse()
+local camera = game.Workspace.CurrentCamera
+local holding = false 
+local ticket = 0
+local timeHeld = 0
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Functions 
+
+local function createline(player)
+    local L = Drawing.new("Line")
+    L.From = Vector2.new(1,1)
+    L.To = Vector2.new(0,0)
+    L.Visible = true
+    L.Thickness = 2
+    L.Color = player.TeamColor.Color
+    return L
+end
+
+local function createpartline(part)
+    local R = Drawing.new("Line")
+    R.From = Vector2.new(1,1)
+    R.To = Vector2.new(0,0)
+    R.Visible = true
+    R.Thickness = 2
+    R.Color = Color3.fromRGB(255, 0, 0)
+    return R 
+end 
+
+local function newbox(player)
+    local box = {["Player"] = player, createline(player), createline(player), createline(player), createline(player)}
+    table.insert(boxes,box)
+end
+
+local function newpartbox(model)
+    local box = {["Part"] = model, createpartline(model.PrimaryPart), createpartline(model.PrimaryPart), createpartline(model.PrimaryPart), createpartline(model.PrimaryPart)}
+    table.insert(parts, box)
+end
+
+local function makepartbox(box, mode)
+    local model = box["Part"]
+    local tl = camera:WorldToViewportPoint(model.PrimaryPart.CFrame * CFrame.new(-2, 3, 0).Position)
+    local tr = camera:WorldToViewportPoint(model.PrimaryPart.CFrame * CFrame.new(2, 3, 0).Position)
+    local bl = camera:WorldToViewportPoint(model.PrimaryPart.CFrame * CFrame.new(-2, -3, 0).Position)
+    local br = camera:WorldToViewportPoint(model.PrimaryPart.CFrame * CFrame.new(2, -3, 0).Position)
+    box[1].From = Vector2.new(tl.x, tl.y)
+    box[2].From = Vector2.new(tl.x, tl.y)
+    box[3].From = Vector2.new(tr.x, tr.y)
+    box[4].From = Vector2.new(bl.x, bl.y)
+    box[1].To = Vector2.new(bl.x, bl.y)
+    box[2].To = Vector2.new(tr.x, tr.y)
+    box[3].To = Vector2.new(br.x, br.y)
+    box[4].To = Vector2.new(br.x, br.y)
+end
+
+local function makebox(box, playe)
+    local player = box["Player"]
+    local tl = camera:WorldToViewportPoint(player.Character.HumanoidRootPart.CFrame * CFrame.new(-2, 3, 0).Position)
+    local tr = camera:WorldToViewportPoint(player.Character.HumanoidRootPart.CFrame * CFrame.new(2, 3, 0).Position)
+    local bl = camera:WorldToViewportPoint(player.Character.HumanoidRootPart.CFrame * CFrame.new(-2, -3, 0).Position)
+    local br = camera:WorldToViewportPoint(player.Character.HumanoidRootPart.CFrame * CFrame.new(2, -3, 0).Position)
+    box[1].From = Vector2.new(tl.x, tl.y)
+    box[2].From = Vector2.new(tl.x, tl.y)
+    box[3].From = Vector2.new(tr.x, tr.y)
+    box[4].From = Vector2.new(bl.x, bl.y)
+    box[1].To = Vector2.new(bl.x, bl.y)
+    box[2].To = Vector2.new(tr.x, tr.y)
+    box[3].To = Vector2.new(br.x, br.y)
+    box[4].To = Vector2.new(br.x, br.y)
+    box[1].Color = playe.TeamColor.Color 
+    box[2].Color = playe.TeamColor.Color 
+    box[3].Color = playe.TeamColor.Color 
+    box[4].Color = playe.TeamColor.Color 
+end
+
+local function visible(box, vis)
+    for i,v in ipairs(box) do 
+        v.Visible = vis 
+    end
+end
+
+local function hasbox(player)
+    for i, v in pairs(boxes) do
+        if v["Player"] == player then 
+            return true 
+        end
+    end
+end
+
+local function parthasbox(model)
+    for i,v in pairs(parts) do 
+        if v["Part"] == model then 
+            return true 
+        end 
+    end 
+end
+
+local function ClosestPlayer() 
+    local closest = nil 
+    local dist = math.huge
+    for i,v in pairs(game.Players:GetChildren()) do 
+        if v.Character and v.Character.HumanoidRootPart and v.Team ~= plr.Team and v.Character.Humanoid.Health ~= 0 and v ~= plr and v.TeamColor ~= "Deep orange" then 
+            local distance = (v.Character.HumanoidRootPart.Position - plr.Character.HumanoidRootPart.Position).Magnitude
+            if distance < dist then 
+                closest = v 
+                dist = distance 
+            end 
+        end 
+    end 
+    return closest 
+end
+
+local function ClosestPlayerToMouse()
+    local closest = nil
+    local dist = math.huge
+    for i,v in pairs(game.Players:GetChildren()) do
+        if v.Character and v.Character.HumanoidRootPart and v.Team ~= plr.Team and v.Character.Humanoid.Health ~= 0 and v ~= plr then 
+            local screenpoint = camera:WorldToScreenPoint(v.Character.HumanoidRootPart.Position)
+            local distance = (Vector2.new(mouse.x, mouse.y) - Vector2.new(screenpoint.x, screenpoint.x)).Magnitude
+            if distance < dist then
+                closest = v
+                dist = distance
+            end
+        end
+    end
+    return closest
+end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Check For Holding MB2 
+
+function rightMouseButtonHeld()
+    holding = true
+end
+
+function rightMouseButtonReleased()
+    if not holding then
+        return
+    end
+    holding = false
+end
+
+uis.InputBegan:connect(function(input, gameProcessed)
+    if gameProcessed then
+        return
+    end
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        ticket = ticket + 1
+        local currentTicket = ticket
+        if timeHeld > 0 then
+            task.delay(timeHeld, function()
+                if ticket == currentTicket then
+                    rightMouseButtonHeld()
+                end
+            end)
+        else
+            rightMouseButtonHeld()
+        end
+    end
+end)
+    
+uis.InputEnded:connect(function(input, gameProcessed)
+    if gameProcessed then
+        return
+    end
+    if input.UserInputType == Enum.UserInputType.MouseButton2 then
+        ticket = ticket + 1
+        rightMouseButtonReleased()
+    end
+end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Tables
+
+for i,v in ipairs(game.Workspace.Spawns:GetChildren()) do 
+    if not table.find(spawns, v.Name) then 
+        table.insert(spawns, v.Name)
+    end 
+end
+
+for i,v in ipairs(game.Players:GetChildren()) do 
+    if not table.find(playerss, v.Name) then 
+        table.insert(playerss, v.Name)
+    end 
+end
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- New Instances
+
+local part = Instance.new("Part")
+part.Anchored = true
+part.Size = Vector3.new(50,1,50)
+part.CFrame = CFrame.new(-11, 33, -173)
+part.Parent = game.Workspace
+
+local part = Instance.new("Part")
+part.Anchored = true
+part.Size = Vector3.new(50,1,50)
+part.CFrame = game.Workspace.Spawns:FindFirstChild("Chaos Insurgency").CFrame
+part.Parent = game.Workspace
+
+local part = Instance.new("Part")
+part.Anchored = true
+part.Size = Vector3.new(50,1,50)
+part.CFrame = CFrame.new(233, 15, 511)
+part.Parent = game.Workspace
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Main 
+
+main1:NewButton("Teleport To Nuke Bunker", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(233, 17, 511)
+    end) 
+end) 
+
+main1:NewButton("Breach 008", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(529, 40, 388)
+        wait(1)
+        fireproximityprompt(game:GetService("Workspace")["Sector 3"].ModelCI008["Meshes/Chaos Insurgency Hack Device_Cylinder"].CIHackDevicePrompt)
+    end)
+end)
+
+main1:NewButton("Breach 096", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(708.509, 40.35, -159.07)
+        wait(12)
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(-171.968, 40.35, 503.986)
+    end)
+end)
+
+main1:NewButton("Sabotage Transformer", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(-102, 34, -176)
+        wait(1)
+        fireproximityprompt(game.Workspace["Sector 2"].SectionB:FindFirstChild("TransformerC4").ClickPart.ProximityPrompt)
+    end)
+end)
+
+main1:NewButton("Hack Control Room", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(83, 37, 192)
+        wait(1)
+        fireproximityprompt(game:GetService("Workspace")["Sector 2"].SectionA.ModelCI["Meshes/Chaos Insurgency Hack Device_Cylinder"].CIHackDevicePrompt)
+    end)
+end)
+
+main1:NewButton("Escape As CD", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(7.023, 36.498, -170.876)
+        wait(5)
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(-52.511, 87.748, 236.672)
+    end)
+end)
+
+main1:NewButton("Heal Self (Hold Medkit)", "", function() 
+game:GetService("ReplicatedStorage").Remotes.Interact:FireServer(plr.Character)
+end)
+
+main1:NewButton("Authorize Nearby Players", "", function()
+    pcall(function()
+        for i,v in pairs(game:GetService("Players"):GetChildren()) do 
+            game:GetService("ReplicatedStorage").Remotes.Authorise:FireServer(v)
+        end 
+    end) 
+end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Teleports 
+
+teleports1:NewButton("Tp To Selected Area", "", function()
+    pcall(function()
+        if d == "Sector 3" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(491, 42, 150)
+        elseif d == "Bunker" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(228, 42, 438)
+        elseif d == "Class D Viewing" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(21, 62, 467)
+        elseif d == "Class D Containment" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(26, 45, 519)
+        elseif d == "Control Room" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(67, 42, 217)
+        elseif d == "Sector 1" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-358, 42, 56)
+        elseif d == "Shooting Range" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-433, 32, 3)
+        elseif d == "Heli Pad" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-573, 52, 436)
+        elseif d == "Transformer" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-95, 42, -148)
+        elseif d == "Sector 2-1" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-313, 42, 57)
+        elseif d == "Sector 2-2" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(290, 42, 151)
+        end
+    end)
+end)
+
+teleports1:NewDropdown("Select Area", "", {"Sector 1", "Sector 2-1", "Sector 2-2", "Sector 3", "Control Room", "Transformer", "Bunker", "Class D Containment", "Class D Viewing", "Heli Pad", "Shooting Range"}, function(c)
+d = c 
+end)
+
+teleports2:NewButton("Tp To SCP Containment", "", function()
+    pcall(function()
+        if r == "008" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(538, 40, 388)
+        elseif r == "008 Deconstructor" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(498, 40, 298)
+        elseif r == "049" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(605, 40, 53)
+        elseif r == "966" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(653, 40, 48)
+        elseif r == "457" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(607, 40, -43)
+        elseif r == "096" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(662, 40, -121)
+        elseif r == "173" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(204, 54, 158)
+        elseif r == "002" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-82, 40, 143)
+        elseif r == "2950" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-213, 40, 190)
+        elseif r == "131" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-213, 40, 301)
+        elseif r == "066" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-215, 40, -39)
+        elseif r == "999" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-282, 40, 27)
+        elseif r == "409" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(-87, 40, -65)
+        elseif r == "1299" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(141, 40, -67)
+        elseif r == "1025" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(256, 40, -52)
+        elseif r == "023" then 
+            plr.Character.HumanoidRootPart.CFrame = CFrame.new(258, 40, 248)
+        end 
+    end)
+end)
+
+teleports2:NewDropdown("Select SCP Containment", "", {"008", "096", "049", "173", "966", "457", "999", "023", "008 Deconstructor", "002", "1299", "1025", "2950", "131", "066", "409"}, function(l)
+r = l
+end)
+
+teleports3:NewButton("Tp To Selected Spawn", "", function()
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = game.Workspace.Spawns:FindFirstChild(b).CFrame + Vector3.new(0, 10, 0)
+    end)
+end)
+
+teleports3:NewDropdown("Select Spawn", "", spawns, function(a)
+b = a 
+end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Local Player 
+
+misc1:NewToggle("Toggle Walkspeed", "", function(irut)
+ortm = irut 
+while ortm and task.wait() do
+    pcall(function()
+        plr.Character.Humanoid.WalkSpeed = pro 
+    end) 
+end 
+end)
+
+misc1:NewToggle("Toggle JumpPower", "", function(ooga)
+booga = ooga
+while booga and task.wait() do
+    pcall(function()
+        plr.Character.Humanoid.JumpPower = prop 
+    end) 
+end 
+end)
+
+misc1:NewToggle("NoClip", "", function(gfrt)
+lotp = gfrt
+while lotp and task.wait() do 
+    pcall(function()
+        for i,v in pairs(plr.Character:GetDescendants()) do 
+            if v:IsA("BasePart") and v.CanCollide ~= false then
+                v.CanCollide = false
+            end 
+        end 
+    end)
+end 
+end)
+
+misc1:NewTextBox("WalkSpeed", "", function(no)
+local h = game.Players.LocalPlayer.Character.Humanoid
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+local scp = mt.__index
+
+mt.__index = newcclosure(function(r, p)
+    if r == h and p == "WalkSpeed" then
+        return nil
+    end
+    return scp(r, p)
+end)
+
+setreadonly(mt, true)
+pro = no
+end)
+
+misc1:NewTextBox("JumpPower", "", function(fr)
+local h = game.Players.LocalPlayer.Character.Humanoid
+local mt = getrawmetatable(game)
+setreadonly(mt, false)
+local scp = mt.__index
+
+mt.__index = newcclosure(function(r, p)
+    if r == h and p == "JumpPower" then
+        return nil
+    end
+    return scp(r, p)
+end)
+
+setreadonly(mt, true)
+prop = fr
+end)
+
+misc1:NewButton("Clip", "", function()
+    pcall(function()
+        for i,v in pairs(plr.Character:GetDescendants()) do 
+            if v.Name == "HumanoidRootPart" and v.CanCollide == false then 
+                v.CanCollide = true
+            end 
+        end
+    end)
+end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Auto Farm
+
+autofarm1:NewToggle("Auto Breach 008", "", function(ir)
+it = ir 
+while it and task.wait(1) do 
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(530, 41, 388)
+        wait(1)
+        fireproximityprompt(game:GetService("Workspace")["Sector 3"].ModelCI008["Meshes/Chaos Insurgency Hack Device_Cylinder"].CIHackDevicePrompt)
+    end) 
+end 
+end)
+
+autofarm1:NewToggle("Auto Farm Escapes (Gives Skins)", "", function(prt)
+poit = prt 
+while poit and task.wait(5) do 
+    pcall(function()
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(7.023, 36.498, -170.876)
+        wait(5)
+        plr.Character.HumanoidRootPart.CFrame = CFrame.new(-52.511, 87.748, 236.672)
+        wait(3)
+        game:GetService("ReplicatedStorage").Remotes.Spawn:InvokeServer({"Class - D", 0, false}, false, false)
+    end) 
+end 
+end)
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Combat
+
+combat1:NewToggle("Kill Aura (Must Hold Gun For These)", "", function(oiu)
+uiu = oiu 
+while uiu and task.wait(.1) do 
+    pcall(function()
+        local args = {
+            [1] = {
+                [1] = ClosestPlayer().Character.Head.Position.X,
+                [2] = ClosestPlayer().Character.Head.Position.Y,
+                [3] = ClosestPlayer().Character.Head.Position.Z
+            },
+            [2] = ClosestPlayer().Character.Head
+        }
+        game:GetService("ReplicatedStorage").Remotes.ShootRemote:FireServer(unpack(args))
+    end) 
+end 
+end)
+
+combat1:NewToggle("Mouse Kill Aura", "", function(por)
+hub = por
+while hub and task.wait(.1) do 
+    if holding then 
+        pcall(function()
+            local args = {
+                [1] = {
+                    [1] = ClosestPlayerToMouse().Character.Head.Position.X,
+                    [2] = ClosestPlayerToMouse().Character.Head.Position.Y,
+                    [3] = ClosestPlayerToMouse().Character.Head.Position.Z
+                },
+                [2] = ClosestPlayerToMouse().Character.Head
+            }
+            game:GetService("ReplicatedStorage").Remotes.ShootRemote:FireServer(unpack(args))
+        end) 
+    end 
+end
+end)
+
+combat1:NewKeybind("Center Mouse", "", Enum.KeyCode.F, function()
+	mousemoveabs(workspace.CurrentCamera.ViewportSize.X / 2, workspace.CurrentCamera.ViewportSize.Y / 2)
+end)
+
+combat1:NewToggle("Kill Player", "", function(OKLOL)
+OKBOZO = OKLOL
+while OKBOZO and task.wait(.1) do 
+    pcall(function()
+        local args = {
+            [1] = {
+                [1] = game.Players[xdxd].Character.Head.Position.X,
+                [2] = game.Players[xdxd].Character.Head.Position.Y,
+                [3] = game.Players[xdxd].Character.Head.Position.Z
+            },
+            [2] = game.Players[xdxd].Character.Head
+        }
+        game:GetService("ReplicatedStorage").Remotes.ShootRemote:FireServer(unpack(args))
+    end)
+end 
+end)
+
+local xxx = combat1:NewDropdown("Select Player", "", playerss, function(xdlol)
+xdxd = xdlol 
+end) 
+
+combat1:NewButton("Refresh Players", "", function()
+pcall(function()
+table.clear(playerss)
+    for i,v in ipairs(game.Players:GetChildren()) do 
+        if not table.find(playerss, v.Name) then 
+            table.insert(playerss, v.Name)
+        end 
+    end
+xxx:Refresh(playerss)
+end)
+end)
+
+combat1:NewToggle("Loop Contain Nearby SCPS (V-7 Required)", "", function(qot)
+qor = qot 
+while qor and task.wait() do 
+    pcall(function()
+        for i,v in pairs(game.Workspace.SCPs:GetChildren()) do 
+            game:GetService("ReplicatedStorage").Remotes.Update:FireServer(v)
+        end 
+    end)
+end 
+end)
+
+combat2:NewToggle("ESP", "", function(opope)
+opeope = opope
+end)
+
+combat2:NewButton("Disable ESP", "", function()
+pcall(function()
+    for i,v in pairs(boxes) do
+        visible(v, false)
+    end 
+end) 
+end)
+
+combat2:NewToggle("Dangerous SCP ESP", "", function(kli)
+kuy = kli 
+end)
+
+combat2:NewButton("Disable SCP ESP", "", function() 
+pcall(function()
+    for i,v in pairs(parts) do 
+        visible(v, false)
+    end 
+end) 
+end)
+
+-- Others
+pcall(function()
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+v:Disable()
+end
+end)
+
+pcall(function()
+runservice.RenderStepped:Connect(function()
+    if opeope then
+    for r,t in pairs(game.Players:GetPlayers()) do
+        if (not hasbox(t)) and t ~= plr then
+            newbox(t)
+        end
+    end
+    
+    for i,v in pairs(boxes) do
+        local player = v["Player"]
+        if player.Character and player.Character:FindFirstChild("HumanoidRootPart") then
+            makebox(v, player)
+            local _, OnScreen = camera:WorldToScreenPoint(player.Character.HumanoidRootPart.Position)
+            if OnScreen then
+               visible(v, true)
+            else
+               visible(v, false)    
+           end
+       else
+           visible(v, false)
+       end
+    end
+    end
+end)
+end)
+
+pcall(function()
+runservice.RenderStepped:Connect(function()
+if kuy then 
+for i,v in pairs(game.Workspace.SCPs:GetChildren()) do 
+    if (not parthasbox(v)) and (v.Name == "SCP-023" or v.Name == "SCP-049" or v.Name == "SCP-457") then
+        newpartbox(v)
+    end
+end 
+
+for i,v in pairs(game.Workspace.SCPs["SCP-966"]:GetChildren()) do 
+    if (not parthasbox(v)) and (v.Name == "Instance1" or v.Name == "Instance2" or v.Name == "Instance3" or v.Name == "Instance4") then 
+        newpartbox(v)
+    end 
+end
+
+for i,v in pairs(game.Workspace.SCPs["SCP-096"]:GetChildren()) do 
+    if (not parthasbox(v)) and (v.Name == "Rig") then 
+        newpartbox(v)
+    end 
+end
+
+for q,e in pairs(parts) do 
+    local part = e["Part"]
+    if part:FindFirstChild("HumanoidRootPart") then
+            makepartbox(e)
+            local _, OnScreen = camera:WorldToScreenPoint(part:FindFirstChild("HumanoidRootPart").Position)
+            if OnScreen then
+               visible(e, true)
+            else
+               visible(e, false)    
+           end
+       else
+           visible(e, false)
+            end
+end
+end 
+end)
+end)
