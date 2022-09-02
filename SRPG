@@ -1,0 +1,487 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local window = library.CreateLib("Novaz#5792", "BloodTheme")
+local man = window:NewTab("Main")
+local sect = man:NewSection("Main")
+local main = window:NewTab("Auto Farm")
+local section = main:NewSection("Auto Farm")
+local main1 = window:NewTab("Kill Aura 1")
+local section1 = main1:NewSection("Kill Aura")
+local main2 = window:NewTab("Kill Aura 2")
+local section2 = main2:NewSection("Kill Aura")
+local main4 = window:NewTab("Spell/Special Spam")
+local section4 = main4:NewSection("Advanced (Use Remote Spy If Confused)")
+local main3 = window:NewTab("Teleports")
+local section3 = main3:NewSection("Teleports")
+local plr = game.Players.LocalPlayer
+
+local fixes = {
+    ["K"] = 1000,
+    ["M"] = 1000000,
+    ["B"] = 1000000000,
+    ["T"] = 1000000000000
+}
+
+local function playerlvl()
+local fix = plr.leaderstats.Lvl.Value:sub(-1)
+if fixes[fix] then 
+    return tonumber(string.gsub(plr.leaderstats.Lvl.Value, "%D+", "") * fixes[fix])
+else 
+    return tonumber(plr.leaderstats.Lvl.Value)
+end
+end 
+
+local function getclosestlvlmob()
+    local closest = math.huge
+    local current = nil
+    for i,v in pairs(game.Workspace.NPCs:GetChildren()) do 
+    if string.find(v.Name, "HP") then 
+        local kil = string.split(v.Name, "HP")
+        local k = string.gsub(kil[1], "%D+", "")
+        if math.abs(k - playerlvl()) < math.abs(k - closest) then 
+            closest = k 
+            current = v
+        end
+    else 
+        local k = string.gsub(v.Name, "%D+", "")
+        if math.abs(k - playerlvl()) < math.abs(k - closest) then 
+            closest = k 
+            current = v
+        end
+    end 
+    end 
+    return current
+end 
+
+local function getclosestmob() 
+    local closest = nil 
+    local maxdist = math.huge
+    for i,v in pairs(game.Workspace.NPCs:GetChildren()) do 
+        if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid").Health > 0 then 
+            local dist = (plr.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
+            if dist < maxdist then 
+                maxdist = dist 
+                closest = v.HumanoidRootPart
+            end 
+        end 
+    end
+    return closest
+end
+
+local table1 = {}
+
+for i,v in pairs(game.Players.LocalPlayer.Character.Equipment:GetChildren()) do 
+    if (v.Name ~= "Left" and v.Name ~= "Right" and v.Name ~= "LeftLowerArm" and v.Name ~= "RightLowerArm" and v.Name ~= "LeftLowerLeg" and v.Name ~= "RightLowerLeg" and v.Name ~= "LeftFoot" and v.Name ~= "RightFoot") and (not table.find(table1, v.Name)) and (not string.find(v.Name, "Chestplate")) and (not string.find(v.Name, "Leggings")) and (not string.find(v.Name, "Ringlet")) then
+        table.insert(table1, v.Name)
+        table.sort(table1)
+    end 
+end
+
+local enemies = {} 
+
+for i,v in pairs(game.Workspace.NPCs:GetChildren()) do 
+    local k = string.split(v.Name, "Lv")
+    if (not table.find(enemies, k[1])) then 
+        table.insert(enemies, k[1])
+        table.sort(enemies)
+    end 
+end 
+
+sect:NewToggle("Kinda God Mode (Knight Amulet)", "", function(qoo)
+bpp = qoo 
+while bpp and task.wait(.2) do 
+pcall(function()
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", "Heavy KnightForgotten Knight Amulet", math.random, "Evade")
+end) 
+end 
+end)
+
+sect:NewButton("Open Selected Shop", "", function()
+for i,v in pairs(game.Workspace.Stores:GetChildren()) do 
+    if v:IsA("Model") then 
+        for o,k in pairs(v:GetChildren()) do
+            if k:IsA("Part") then 
+                if jok == "Depths" then
+                    if (k.Position - Vector3.new(4263, -44, -636)).Magnitude < 10 then
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Athenia" then 
+                    if (k.Position - Vector3.new(-5383, -1, 169)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Rebirth Hub" then 
+                    if (k.Position - Vector3.new(2895, -11, 3057)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Slave Mines" then 
+                    if (k.Position - Vector3.new(98, 376, 5631)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Beginner" then 
+                    if (k.Position - Vector3.new(-39, 0, -591)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Armor" then 
+                    if (k.Position - Vector3.new(-187, 29, -546)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Sky" then 
+                    if (k.Position - Vector3.new(-1862, 1002, -1419)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                elseif jok == "Village" then 
+                    if (k.Position - Vector3.new(42, 7, -997)).Magnitude < 10 then 
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 0)
+                        wait()
+                        firetouchinterest(plr.Character.HumanoidRootPart, k, 1)
+                    end
+                end
+            end 
+        end 
+    end 
+end 
+end)
+
+sect:NewDropdown("Select Shop", "", {"Depths", "Sky", "Athenia", "Rebirth Hub", "Slave Mines", "Beginner", "Armor", "Village"}, function(jos)
+jok = jos 
+end)
+ 
+sect:NewToggle("Auto Collect 15m Reward", "", function(iiii)
+iiiii = iiii 
+while iiiii and task.wait(1) do
+game:GetService("ReplicatedStorage").RemoteEvent:FireServer("ClaimOffering")
+end 
+end)
+
+sect:NewToggle("Auto Rebirth", "", function(iuue)
+ouue = iuue 
+while ouue and task.wait() do 
+firesignal(game.Players.LocalPlayer.PlayerGui.Interface.Rebirth.Claim.MouseButton1Click)
+end 
+end)
+
+sect:NewToggle("Auto Pickup Drops", "", function(iii)
+ooop = iii 
+while ooop and task.wait() do 
+pcall(function()
+for i,v in pairs(game.Workspace.Projectiles:GetChildren()) do 
+    if v:FindFirstChild("ProximityPrompt") then 
+        fireproximityprompt(v:FindFirstChild("ProximityPrompt"))
+    end 
+end 
+end)
+end 
+end)
+
+sect:NewButton("Collect All Cubits", "", function()
+for i,v in pairs(game.Workspace["Client Cubits"]:GetChildren()) do 
+    if v.Name == "Cubit" then 
+        for o,k in pairs(v:GetChildren()) do 
+            if k.Name == "Highlight" then 
+                wait() 
+            else 
+                fireproximityprompt(k)
+            end 
+        end 
+    end 
+end 
+for i,v in pairs(game.Workspace.Projectiles:GetChildren()) do 
+    if v.Name == "Cubit" then 
+        for o,k in pairs(v:GetChildren()) do 
+            if k.Name == "Highlight" then 
+                wait() 
+            else 
+                fireproximityprompt(k)
+            end 
+        end 
+    end 
+end 
+end)
+
+section:NewToggle("Level Farm (Not Recommended For High LVL)", "", function(help)
+mepls = help 
+while mepls and task.wait() do 
+pcall(function()
+if qqq == "Behind" then 
+plr.Character.HumanoidRootPart.CFrame = getclosestlvlmob().HumanoidRootPart.CFrame + getclosestlvlmob().HumanoidRootPart.CFrame.lookVector * pp
+elseif qqq == "Above" then 
+plr.Character.HumanoidRootPart.CFrame = getclosestlvlmob().HumanoidRootPart.CFrame * CFrame.new(0, howcouldyou, 0) * CFrame.Angles(math.rad(-90), 0, 0) 
+elseif qqq == "Below" then 
+plr.Character.HumanoidRootPart.CFrame = getclosestlvlmob().HumanoidRootPart.CFrame * CFrame.new(0, fag, 0) * CFrame.Angles(math.rad(-270), 0, 0) 
+end
+if quir then 
+plr.Character.Combat.RemoteEvent:FireServer("Input", d, math.random, f, getclosestlvlmob().HumanoidRootPart)
+end
+end)
+end 
+end)
+
+section:NewToggle("Auto Farm Enemy", "", function(oii)
+poii = oii 
+while poii and task.wait() do 
+pcall(function()
+for i,v in pairs(game.Workspace.NPCs:GetChildren()) do 
+    local k = string.split(v.Name, "Lv")
+    if k[1] == lolol.." " and v:FindFirstChild("HumanoidRootPart") then
+        if qqq == "Behind" then 
+        plr.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame + v.HumanoidRootPart.CFrame.lookVector * pp
+        elseif qqq == "Above" then 
+        plr.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, howcouldyou, 0) * CFrame.Angles(math.rad(-90), 0, 0) 
+        elseif qqq == "Below" then 
+        plr.Character.HumanoidRootPart.CFrame = v.HumanoidRootPart.CFrame * CFrame.new(0, fag, 0) * CFrame.Angles(math.rad(-270), 0, 0) 
+        end
+        if quir then 
+        game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", d, math.random, f, v.HumanoidRootPart)
+        end
+    end 
+end 
+end)
+end 
+end)
+
+section:NewToggle("Kill Aura Enemy (Uses KA1)", "", function(qoir)
+quir = qoir
+end)
+
+section:NewDropdown("Select Position", "", {"Behind", "Above", "Below"}, function(qq)
+qqq = qq 
+end)
+
+local aaa = section:NewDropdown("Select Enemy", "", enemies, function(popop)
+lolol = popop
+end)
+
+section:NewButton("Refresh Enemies", "", function()
+table.clear(enemies)
+for i,v in pairs(game:GetService("ReplicatedStorage").Enemies:GetChildren()) do 
+    if (not table.find(enemies, v.Name)) then 
+        table.insert(enemies, v.Name)
+        table.sort(enemies)
+    end 
+end 
+aaa:Refresh(enemies)
+end)
+
+section:NewSlider("Behind Distance", "", -25, 0, function(tt)
+pp = tt 
+end)
+
+section:NewSlider("Above Distance", "", 25, 0, function(NOO)
+howcouldyou = NOO
+end)
+
+section:NewSlider("Below Distance", "", -25, 0, function(grt)
+fag = grt
+end)
+
+section1:NewToggle("Kill Aura", "", function(a)
+b = a 
+while b and task.wait(lol) do 
+pcall(function()
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", d, math.random, f, getclosestmob())
+end)
+end 
+end)
+
+section1:NewTextBox("Kill Aura Wait Time", "", function(ok)
+lol = ok 
+end)
+
+section1:NewDropdown("Select Attack Event", "", {"SlashEvent", "SlamEvent", "StabEvent", "JoustHurt"} ,function(e)
+f = e 
+end)
+
+local kkk = section1:NewDropdown("Select Weapon", "", table1, function(c)
+d = c 
+end)
+
+section1:NewButton("Refresh Dropdown", "", function()
+table.clear(table1)
+for i,v in pairs(game.Players.LocalPlayer.Character.Equipment:GetChildren()) do 
+    if (v.Name ~= "Left" and v.Name ~= "Right" and v.Name ~= "LeftLowerArm" and v.Name ~= "RightLowerArm" and v.Name ~= "LeftLowerLeg" and v.Name ~= "RightLowerLeg" and v.Name ~= "LeftFoot" and v.Name ~= "RightFoot") and (not table.find(table1, v.Name)) and (not string.find(v.Name, "Chestplate")) and (not string.find(v.Name, "Leggings")) and (not string.find(v.Name, "Ringlet")) then
+        table.insert(table1, v.Name)
+        table.sort(table1)
+    end 
+end
+kkk:Refresh(table1)
+end)
+
+section2:NewToggle("Kill Aura", "", function(loloke)
+kolole = loloke
+while kolole and task.wait(txt1) do 
+pcall(function()
+print(kolole)
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", ily, math.random, ruip)
+end)
+end 
+end)
+
+section2:NewTextBox("Kill Aura Wait Time", "", function(txt)
+txt1 = txt 
+end)
+
+section2:NewDropdown("Select Attack Event", "", {"Bow", "Breath"}, function(oiuq)
+ruip = oiuq 
+end)
+
+local xxx = section2:NewDropdown("Select Weapon", "", table1, function(iiiu)
+ily = iiiu
+end)
+
+section2:NewButton("Refresh Dropdown", "", function()
+table.clear(table1)
+for i,v in pairs(game.Players.LocalPlayer.Character.Equipment:GetChildren()) do 
+    if (v.Name ~= "Left" and v.Name ~= "Right" and v.Name ~= "LeftLowerArm" and v.Name ~= "RightLowerArm" and v.Name ~= "LeftLowerLeg" and v.Name ~= "RightLowerLeg" and v.Name ~= "LeftFoot" and v.Name ~= "RightFoot") and (not table.find(table1, v.Name)) and (not string.find(v.Name, "Chestplate")) and (not string.find(v.Name, "Leggings")) and (not string.find(v.Name, "Ringlet")) then
+        table.insert(table1, v.Name)
+        table.sort(table1)
+    end 
+end
+xxx:Refresh(table1)
+end)
+
+section3:NewButton("Teleport To Rebirth Portals", "", function()
+plr.Character.HumanoidRootPart.CFrame = CFrame.new(98, 10, -623)
+end) 
+
+section3:NewButton("Teleport To Hall Of Time", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Hall of Time") and (not v:FindFirstChild("Tarnished")) then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hall of Time"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hall of Time"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Hub Of Rebirth", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Hub of Rebirth") and (not v:FindFirstChild("Kronos")) then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hub of Rebirth"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hub of Rebirth"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Realm Of Athenia", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Athenia") then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Athenia"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Athenia"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Slave Mines", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Mines") then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Mines"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Mines"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To The Depths", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Underwater") and v:FindFirstChild("Default") then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Underwater"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Underwater"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Tarnished Realm", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Tarnished") then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Tarnished"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Tarnished"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Sky Island", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("tele1") and v.tele1:FindFirstChild("BillboardGui") and v.tele1:FindFirstChild("BillboardGui").TextLabel.Text == "Castle in the Sky [LVL 45]" then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["tele1"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["tele1"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Kronos (Past)", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Kronos") and v:FindFirstChild("Default") then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Kronos"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Kronos"], 1)
+end
+end
+end) 
+
+section3:NewButton("Teleport To Kronos (Final)", "", function()
+for i,v in pairs(game:GetService("Workspace").Teleporters:GetChildren()) do 
+if v:FindFirstChild("Hall of Time") and (not v:FindFirstChild("Tarnished")) then 
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hall of Time"], 0)
+wait()
+firetouchinterest(plr.Character.HumanoidRootPart, v["Hall of Time"], 1)
+end
+end
+wait(3)
+plr.Character.HumanoidRootPart.CFrame = CFrame.new(-5234, 1700, 4459)
+end) 
+
+section4:NewToggle("Spam (OP)", "", function(oom)
+poom = oom 
+while poom and task.wait(text1) do 
+pcall(function()
+game:GetService("Players").LocalPlayer.Character.Combat.RemoteEvent:FireServer("Input", guil, math.random, qr)
+end)
+end
+end)
+
+section4:NewTextBox("Wait Time", "", function(text)
+text1 = text 
+end)
+
+section4:NewTextBox("Caster (textbox info)", "Chronobonum would be KronosChronobonum etc", function(lololp)
+guil = lololp
+end)
+
+section4:NewTextBox("Attack", "ex. Horns, Hand, Rage", function(qqr)
+qr = qqr 
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+if poii then 
+for i,v in pairs(plr.Character:GetDescendants()) do 
+    if v:IsA("BasePart") and v.CanCollide then 
+        v.CanCollide = false 
+        plr.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+    end 
+end 
+end 
+end)
+
+pcall(function()
+for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+v:Disable()
+end
+end)
