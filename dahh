@@ -1,0 +1,498 @@
+local lib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/Vape.txt")()
+local win = lib:Window("ECRYPTED V6",Color3.fromRGB(44, 120, 224), Enum.KeyCode.RightControl)
+
+local Lib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/BoredStuff2/notify-lib/main/lib'),true))()
+
+local Aiming = loadstring(game:HttpGet("https://pastebin.com/raw/xMYubpbC"))()
+Aiming.ShowFOV = false
+local ESP = loadstring(game:HttpGet("https://kiriot22.com/releases/ESP.lua"))()
+ESP:Toggle(true)
+ESP.Boxes = false
+ESP.Names = false
+ESP.Tracers = false
+ESP.FaceCamera = true
+
+Aiming.TeamCheck(false)
+Aiming.VisibleCheck = true
+-- // Dependencies
+ 
+-- // Services
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+ 
+-- // Vars
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local CurrentCamera = Workspace.CurrentCamera
+
+local DaHoodSettings = {
+    SilentAim = false,
+    AimLock = false,
+    Prediction = 0.178
+}
+
+getgenv().DaHoodSettings = DaHoodSettings
+
+
+targetplr = ""
+
+_G.AutoKill = false
+
+local ragetab = win:Tab("Rage")
+local visualtab = win:Tab("Visuals")
+local teleporttab = win:Tab("Teleportation")
+local playertab = win:Tab("Player")
+local infotab = win:Tab("Information")
+local target = win:Tab("Target")
+local antiaimtab = win:Tab("Anti-Aim")
+
+ragetab:Toggle("Aimbot",false, function(t)
+	DaHoodSettings.AimLock = t
+end)
+
+ragetab:Toggle("Silent Aim",false, function(t)
+	DaHoodSettings.SilentAim = t
+end)
+
+ragetab:Toggle("Visible Check",false, function(t)
+	Aiming.VisibleCheck = t
+end)
+
+ragetab:Colorpicker("FOV Color",Color3.fromRGB(255, 255, 255), function(t)
+    Aiming.FOVColour = t
+end)
+
+ragetab:Toggle("Toggle Fov Circle",false, function(t)
+	Aiming.ShowFOV = t
+end)
+
+ragetab:Slider("FOV Value",0,250,0, function(t)
+	Aiming.FOV = t
+end)
+
+ragetab:Slider("FOV",0,12,0, function(t)
+	Aiming.FOVSides = t
+end)
+
+visualtab:Toggle("Box",false, function(t)
+	ESP.Boxes = t
+end)
+
+visualtab:Toggle("Tracers",false, function(t)
+	ESP.Tracers = t
+end)
+
+visualtab:Toggle("Names",false, function(t)
+	ESP.Names = t
+end)
+
+visualtab:Colorpicker("ESP Color",Color3.fromRGB(255, 255, 255), function(t)
+    ESP.Color = t
+end)
+
+visualtab:Slider("Thickness",0,15,0, function(t)
+	ESP.Thickness = t
+end)
+
+infotab:Textbox("Player Name",true, function(t)
+	targetplr = t
+Lib.prompt('Alert', targetplr..' cash is: '.. game.Players[targetplr].DataFolder.Currency.Value)
+end)
+
+playertab:Button("Fly[Q]", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/tq8DujdT"))()
+end)
+
+playertab:Button("God Mode (V1)", function()
+	local Client = game:GetService"Players".LocalPlayer
+
+function Godmode()
+   local Attacking = Client.Character:FindFirstChild"BodyEffects".Attacking
+   
+    if Attacking then
+        Attacking:Destroy()
+    end
+end
+Godmode()
+end)
+
+playertab:Button("God Mode (V2)", function()
+	local localPlayer = game:GetService('Players').LocalPlayer;
+				local localCharacter = localPlayer.Character;
+				localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
+				local newCharacter = localPlayer.CharacterAdded:Wait();
+				local spoofFolder = Instance.new('Folder');
+				spoofFolder.Name = 'FULLY_LOADED_CHAR';
+				spoofFolder.Parent = newCharacter;
+				newCharacter:WaitForChild('BodyEffects').Dead:Destroy();
+				local spoofValue = Instance.new('BoolValue', newCharacter.BodyEffects);
+				spoofValue.Name = 'Dead';
+				wait()
+				--godblock/godbullet
+				local ps = game:GetService("Players")
+				local lp = ps.LocalPlayer
+				local char = lp.Character
+
+				char.BodyEffects.Armor:Destroy()
+				char.BodyEffects.Defense:Destroy()
+
+				local Clone1 = Instance.new("IntValue")
+				Clone1.Name = "Armor"
+				Clone1.Parent = char.BodyEffects
+
+				local Clone2 = Instance.new("NumberValue")
+				Clone2.Name = "Defense"
+				Clone2.Parent = char.BodyEffects
+				wait()
+				--walspeed
+				local d = {}
+				local e = {}
+				local g = {}
+				local h = {}
+				local j = {}
+				local k = {}
+				local function l()
+					local m = 3
+					local n = checkcaller
+					local o = getrawmetatable(game)
+					setreadonly(o, false)
+					local p = o.__index
+					local q = o.__newindex
+					local r = o.__namecall
+					o.__index =
+						newcclosure(
+							function(s, t)
+							if n() then
+								return p(s, t)
+							end
+							if d[s] and d[s][t] then
+								local u = d[s][t]
+								if u["IsCallback"] == true then
+									return u["Value"](s)
+								else
+									return u["Value"]
+								end
+							end
+							if g[t] then
+								local v = g[t]
+								if v["IsCallback"] == true then
+									return v["Value"](s)
+								else
+									return v["Value"]
+								end
+							end
+							if j[s] and j[s][t] then
+								return k[s][t]
+							end
+							return p(s, t)
+						end
+						)
+					o.__newindex =
+						newcclosure(
+							function(w, x, y)
+							if n() then
+								return q(w, x, y)
+							end
+							if e[w] and e[w][x] then
+								local z = e[w][x]
+								if z["Callback"] == nil then
+									return
+								else
+									z["Callback"](w, y)
+									return
+								end
+							end
+							if h[x] then
+								local A = h[x]
+								if A["Callback"] == nil then
+									return
+								else
+									A["Callback"](w, y)
+									return
+								end
+							end
+							if j[w] and j[w][x] then
+								local B = j[w][x]
+								if type(y) ~= B["Type"] then
+									error("bad argument #3 to '" .. x .. "' (" .. B["Type"] .. " expected, got " .. type(x) .. ")")
+								end
+								k[w][x] = y
+								return
+							end
+							return q(w, x, y)
+						end
+						)
+					local D = game.Players.LocalPlayer.Character.Humanoid
+					local function A(_)
+						local a0 = p(D, _)
+						local a1 = type(a0)
+						if not j[D] then
+							j[D] = {}
+						end
+						if not k[D] then
+							k[D] = {}
+						end
+						j[D][_] = {Type = a1}
+						k[D][_] = p(D, _)
+						local a2 = function()
+							j[D][_] = nil
+							k[D][_] = nil
+						end
+						return {remove = a2, Remove = a2}
+					end
+					A("WalkSpeed")
+					A("JumpPower")
+				end
+				l()
+				game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 22
+				game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+				wait()
+				while wait() do
+					game.ReplicatedStorage.MainEvent:FireServer("Block", true)
+					wait()
+					for _, v in next, game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid"):GetPlayingAnimationTracks() do
+						if (v.Animation.AnimationId:match("rbxassetid://2788354405")) then
+							v:Stop();
+						end;
+					end;
+				end
+				wait()
+				while wait() do
+					pcall(function()
+						for i, v in pairs(game.Players:GetPlayers()) do
+							if (workspace.Players[game.Players.LocalPlayer.Name].HumanoidRootPart.Position - v.Character.HumanoidRootPart.Position).Magnitude < 1 then
+								game.ReplicatedStorage.MainEvent:FireServer("Block", true)
+							end
+						end
+					end)
+				end
+end)
+
+playertab:Button("God Mode (V3)", function()
+	local localPlayer = game:GetService('Players').LocalPlayer;
+                local localCharacter = localPlayer.Character;
+                localCharacter:FindFirstChildOfClass('Humanoid').Health = 0;
+                local newCharacter = localPlayer.CharacterAdded:Wait();
+                local spoofFolder = Instance.new('Folder');
+                spoofFolder.Name = 'FULLY_LOADED_CHAR';
+                spoofFolder.Parent = newCharacter;
+                newCharacter:WaitForChild('RagdollConstraints'):Destroy();
+                local spoofValue = Instance.new('BoolValue', newCharacter);
+                spoofValue.Name = 'RagdollConstraints';
+                local name = game.Players.LocalPlayer.Name
+                local lol =    game.Workspace:WaitForChild(name)
+                local money = Instance.new("Folder",game.Players.LocalPlayer.Character);money.Name = "FULLY_LOADED_CHAR"
+                lol.Parent = game.Workspace.Players
+                game.Players.LocalPlayer.Character:WaitForChild("BodyEffects")
+                game.Players.LocalPlayer.Character.BodyEffects.BreakingParts:Destroy()
+end)
+
+playertab:Button("Mind Control(Carry then uncarry then hold with mouse)", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/AQXmLAm3"))()
+end)
+
+playertab:Button("Headless[FE]", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/94d4cyWv"))()
+end)
+
+playertab:Button("Headless[Visual]", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/MTu0r4tm"))()
+end)
+
+playertab:Button("Korblox[Visual]", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/06mYS048"))()
+end)
+
+playertab:Button("Ball[FE]", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/E4PZ2dAH"))()
+end)
+
+playertab:Button("Fist Reach", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/aZHK690D"))()
+end)
+
+playertab:Button("Animation Pack", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/uXv3wtvc"))()
+end)
+
+playertab:Button("Chat Spy", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/yuaPqDW8"))()
+end)
+
+playertab:Textbox("Enter user here for Korblox[FE]",true, function(t)
+	game.Players[t].Character['RightUpperLeg']:remove()
+end)
+
+playertab:Textbox("Enter FOV here",true, function(t)
+	game:GetService'Workspace'.Camera.FieldOfView = t
+end)
+
+playertab:Slider("CFrame Speed [V]",0,250,0, function(t)
+	local plr = game.Players.LocalPlayer
+	down = false
+
+	function onButton1Down(mouse)
+		down = true
+		while down do
+			if not down then break end
+			local char = plr.Character
+
+			char.HumanoidRootPart.Velocity = char.HumanoidRootPart.CFrame.lookVector * t
+			wait()
+		end
+	end
+
+	function onButton1Up(mouse)
+		down = false
+	end
+
+	function onSelected(mouse)
+		mouse.KeyDown:connect(function(k) if k:lower()=="v"then onButton1Down(mouse)end end)
+		mouse.KeyUp:connect(function(k) if k:lower()=="v"then onButton1Up(mouse)end end)
+	end
+	onSelected(game.Players.LocalPlayer:GetMouse())
+end)
+
+teleporttab:Button("Teleport to Bank", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/sA2VHRHB"))()
+end)
+
+teleporttab:Button("Teleport to Police", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/9enax2vC"))()
+end)
+
+teleporttab:Button("Teleport to Shoe Shop", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/3uJcXTCQ"))()
+end)
+
+teleporttab:Button("Teleport to Admin Base", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/2jiaCDey"))()
+end)
+
+teleporttab:Button("Teleport to nearest Cash", function()
+	loadstring(game:HttpGet("https://pastebin.com/raw/4V2ZAjVL"))()
+end)
+
+teleporttab:Textbox("Enter player name here to TP",true, function(t)
+	local Players = game.Players
+	local Player = Players.LocalPlayer
+	function telePlr()
+		Player.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Players[t].Head.Position)
+	end
+	telePlr()
+end)
+
+antiaimtab:Toggle("Anti-Aim Enabled",false, function(t)
+	enabled = t
+	
+	if enabled == t then
+		while enabled == true do
+			wait()
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 6
+wait()
+game.Players.LocalPlayer.Character.Humanoid.HipHeight = 2
+		end
+	end
+end)
+
+antiaimtab:Toggle("Anti-Stomp (Buggy but works)",false, function(t)
+	enabled = t
+
+	if enabled == t then
+		while enabled == true do
+			task.wait()
+			if game.Players.LocalPlayer.Character.Humanoid.Health < 55 then
+				game:GetService('Players').LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-729.895, -37.642, -885.8)
+			end
+		end
+	end
+end)
+
+target:Toggle("Annoy",false, function(t)
+	enabled = t
+
+	if enabled == t then
+		while enabled == true do
+			task.wait()
+			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(game.Workspace.Players[targetplr].HumanoidRootPart.Position)
+		end
+	end
+end)
+
+target:Textbox("Player To Target",true, function(t)
+	targetplr = t
+end)
+
+-- // Overwrite to account downed
+function Aiming.Check()
+    -- // Check A
+    if not (Aiming.Enabled == true and Aiming.Selected ~= LocalPlayer and Aiming.SelectedPart ~= nil) then
+        return false
+    end
+ 
+    -- // Check if downed
+    local Character = Aiming.Character(Aiming.Selected)
+    local KOd = Character:WaitForChild("BodyEffects")["K.O"].Value
+    local Grabbed = Character:FindFirstChild("GRABBING_CONSTRAINT") ~= nil
+ 
+    -- // Check B
+    if (KOd or Grabbed) then
+        return false
+    end
+ 
+    -- //
+    return true
+end
+ 
+-- // Hook
+local __index
+__index = hookmetamethod(game, "__index", function(t, k)
+    -- // Check if it trying to get our mouse's hit or target and see if we can use it
+    if (t:IsA("Mouse") and (k == "Hit" or k == "Target") and Aiming.Check()) then
+        -- // Vars
+        local SelectedPart = Aiming.SelectedPart
+ 
+        -- // Hit/Target
+        if (DaHoodSettings.SilentAim and (k == "Hit" or k == "Target")) then
+            -- // Hit to account prediction
+            local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+ 
+            -- // Return modded val
+            return (k == "Hit" and Hit or SelectedPart)
+        end
+    end
+ 
+    -- // Return
+    return __index(t, k)
+end)
+ 
+local LMFAO = false
+ 
+UserInputService.InputBegan:Connect(function(Key, Is)
+    if Key.UserInputType == Enum.UserInputType.MouseButton2 and not Is then
+        LMFAO = true
+    end
+end)
+ 
+UserInputService.InputEnded:Connect(function(Key, Is)
+    if Key.UserInputType == Enum.UserInputType.MouseButton2 and not Is then
+        LMFAO = false
+    end
+end)
+ 
+ 
+-- // Aimlock
+RunService:BindToRenderStep("AimLock", 0, function()
+    if (DaHoodSettings.AimLock and Aiming.Check() and LMFAO) then
+        -- // Vars
+        local SelectedPart = Aiming.SelectedPart
+ 
+        -- // Hit to account prediction
+        local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+ 
+        -- // Set the camera to face towards the Hit
+        CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
+    end
+end)
