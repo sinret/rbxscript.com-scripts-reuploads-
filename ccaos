@@ -1,0 +1,935 @@
+for i, v in pairs(game:GetDescendants()) do
+    if v.Name == "AntiHack" then
+        game:GetService("Workspace").Map.AntiHack:Destroy()
+    end
+end
+for i,v in pairs(game.CoreGui:GetChildren()) do
+    if v.Name == "stat thing folder" then
+        v:Destroy()
+    end
+end
+
+
+
+
+
+local folder = Instance.new("Folder")
+local scrgui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local humans = Instance.new("TextLabel")
+local creepers = Instance.new("TextLabel")
+local timer = Instance.new("TextLabel")
+local textlabel = Instance.new("TextLabel")
+local textlabel_2 = Instance.new("TextLabel")
+local textlabel_3 = Instance.new("TextLabel")
+local textlabel_4 = Instance.new("TextLabel")
+
+--Properties:
+
+folder.Parent = game.CoreGui
+folder.Name = "stat thing folder"
+
+scrgui.Parent = folder
+scrgui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+scrgui.Name = "stat thing"
+
+Frame.Parent = scrgui
+Frame.Active = true
+Frame.BackgroundColor3 = Color3.fromRGB(0, 120, 255)
+Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.248021111, 0, 0.0752293542, 0)
+Frame.Size = UDim2.new(0, 381, 0, 380)
+Frame.Draggable = true
+
+humans.Name = "humans"
+humans.Parent = Frame
+humans.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+humans.BorderColor3 = Color3.fromRGB(255, 255, 255)
+humans.Position = UDim2.new(0.501312315, 0, 0.213157892, 0)
+humans.Size = UDim2.new(0, 190, 0, 99)
+humans.Font = Enum.Font.SourceSans
+humans.Text = "humans"
+humans.TextColor3 = Color3.fromRGB(255, 255, 255)
+humans.TextScaled = true
+humans.TextSize = 14.000
+humans.TextWrapped = true
+
+creepers.Name = "creepers"
+creepers.Parent = Frame
+creepers.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+creepers.BorderColor3 = Color3.fromRGB(255, 255, 255)
+creepers.Position = UDim2.new(0.501312315, 0, 0.475438654, 0)
+creepers.Size = UDim2.new(0, 190, 0, 99)
+creepers.Font = Enum.Font.SourceSans
+creepers.Text = "creepers"
+creepers.TextColor3 = Color3.fromRGB(255, 255, 255)
+creepers.TextScaled = true
+creepers.TextSize = 14.000
+creepers.TextWrapped = true
+
+timer.Name = "timer"
+timer.Parent = Frame
+timer.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+timer.BorderColor3 = Color3.fromRGB(255, 255, 255)
+timer.Position = UDim2.new(0.501312315, 0, 0.737719297, 0)
+timer.Size = UDim2.new(0, 190, 0, 99)
+timer.Font = Enum.Font.SourceSans
+timer.Text = "timer"
+timer.TextColor3 = Color3.fromRGB(255, 255, 255)
+timer.TextScaled = true
+timer.TextSize = 14.000
+timer.TextWrapped = true
+
+textlabel.Name = "textlabel"
+textlabel.Parent = Frame
+textlabel.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+textlabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
+textlabel.Position = UDim2.new(0, 0, 0.21228075, 0)
+textlabel.Size = UDim2.new(0, 190, 0, 99)
+textlabel.Font = Enum.Font.SourceSans
+textlabel.Text = "Humans:"
+textlabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+textlabel.TextScaled = true
+textlabel.TextSize = 14.000
+textlabel.TextWrapped = true
+
+textlabel_2.Name = "textlabel"
+textlabel_2.Parent = Frame
+textlabel_2.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+textlabel_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_2.Position = UDim2.new(0, 0, 0.478070229, 0)
+textlabel_2.Size = UDim2.new(0, 190, 0, 99)
+textlabel_2.Font = Enum.Font.SourceSans
+textlabel_2.Text = "Creepers:"
+textlabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_2.TextScaled = true
+textlabel_2.TextSize = 14.000
+textlabel_2.TextWrapped = true
+
+textlabel_3.Name = "textlabel"
+textlabel_3.Parent = Frame
+textlabel_3.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+textlabel_3.BorderColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_3.Position = UDim2.new(0, 0, 0.735964954, 0)
+textlabel_3.Size = UDim2.new(0, 190, 0, 99)
+textlabel_3.Font = Enum.Font.SourceSans
+textlabel_3.Text = "Timer:"
+textlabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_3.TextScaled = true
+textlabel_3.TextSize = 14.000
+textlabel_3.TextWrapped = true
+
+textlabel_4.Name = "textlabel"
+textlabel_4.Parent = Frame
+textlabel_4.BackgroundColor3 = Color3.fromRGB(0, 99, 255)
+textlabel_4.BorderColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_4.Position = UDim2.new(0.00262467191, 0, -0.00087713945, 0)
+textlabel_4.Size = UDim2.new(0, 380, 0, 81)
+textlabel_4.Font = Enum.Font.SourceSans
+textlabel_4.Text = "Made by 2AreYouMental110"
+textlabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+textlabel_4.TextScaled = true
+textlabel_4.TextSize = 14.000
+textlabel_4.TextWrapped = true
+scrgui.Enabled = false
+
+
+
+
+
+
+rconsoleclear()
+wait()
+rconsolename("Creeper Chaos Script (CREDITS)")
+rconsoleprint("@@LIGHT_BLUE@@")
+rconsoleprint[[
+
+
+Credits:
+
+everything in the main tab - 2areyoumental110/me
+stats gui - 2areyoumental110/me
+bad code - 2areyoumental110/me
+
+
+
+telekinesis script - dont know who made it but here is where i found it: https://www.youtube.com/watch?v=7cVhlqYekuo
+
+infinite yield - edge, zwolf, moon, toon
+
+dark dex v3 - moon, wally, ic3, and hamstagang
+
+simple spy - exx
+
+crapper chaos - blame the lag / https://www.youtube.com/watch?v=TaCD9CWYpb8
+
+FE HAT FLING - BlueCat / https://www.youtube.com/watch?v=lyhpjG4vbvw
+
+fling all script - idk who made it again so heres the yt link: https://www.youtube.com/watch?v=BnNb-uo2gQo
+
+
+
+
+
+
+
+
+]]
+
+
+wait(1)
+
+
+
+
+
+getgenv().deletecreepercon = false
+getgenv().placeholder1 = false
+getgenv().statsgui = false
+getgenv().deltnt = false
+getgenv().bigarrows = false
+getgenv().tparrows = false
+getgenv().bbay = false
+getgenv().textloop = false
+
+
+local selectedoption
+local selectedblock
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Creeper Chaos (Beta)", "Sentinel")
+
+local A = Window:NewTab("Main")
+local A1 = A:NewSection("Main")
+local B = Window:NewTab("Other Scripts")
+local B1 = B:NewSection("Other Scripts")
+
+
+
+local drpdwn = A1:NewDropdown("players", "its not display name", {"placeholer", "placeholder"}, function(value1)
+    selectedoption = value1
+    print(value1)
+end)
+
+local bdrpdwn = A1:NewDropdown("blocks", "its not manual", {"placeholer", "placeholder"}, function(value1)
+    selectedblock = value1
+    print(value1)
+    return selectedblock
+end)
+
+
+local playerdrpdwn = {
+
+}
+local blockdrpdwn = {
+
+}
+
+A1:NewButton("Update Dropdown (humans)", "Refreshes Dropdown", function()
+    table.clear(playerdrpdwn)
+    for i,v in pairs(game.Teams.Humans:GetPlayers()) do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            table.insert(playerdrpdwn,v.Name)
+            drpdwn:Refresh(playerdrpdwn)
+        end
+    end
+end)
+
+A1:NewButton("Update Dropdown (creepers)", "Refreshes Dropdown", function()
+    table.clear(playerdrpdwn)
+    for i,v in pairs(game.Teams.Creepers:GetPlayers()) do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            table.insert(playerdrpdwn,v.Name)
+            drpdwn:Refresh(playerdrpdwn)
+        end
+    end
+end)
+
+A1:NewButton("Update Dropdown (both)", "Refreshes Dropdown", function()
+    table.clear(playerdrpdwn)
+    for i,v in pairs(game.Players:GetPlayers()) do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            table.insert(playerdrpdwn,v.Name)
+            drpdwn:Refresh(playerdrpdwn)
+        end
+    end
+end)
+
+A1:NewButton("Update Dropdown (blocks)", "Refreshes Dropdown (the other one)", function()
+    table.clear(blockdrpdwn)
+    for i,v in pairs(game:GetService("ReplicatedStorage").Blocks:GetChildren()) do
+        if v.ClassName == "Part" then
+            table.insert(blockdrpdwn,v.Name)
+            bdrpdwn:Refresh(blockdrpdwn)
+        end
+    end
+end)
+
+A1:NewButton("select block", "selects block to build", function()
+    local A_1 = (selectedblock)
+    local Event = game:GetService("ReplicatedStorage").Remotes.SelectBlock
+    Event:FireServer(A_1)
+end)
+
+
+
+A1:NewToggle("build blocks around you (selected)", "you have to select the block", function(bool)
+    getgenv().bbay = bool
+    if bool then
+        bbay()
+    end
+end)
+
+
+A1:NewButton("kill (selected)", "ping must be 50 - 400", function()
+    for i,v in pairs(game.Teams.Creepers:GetPlayers()) do
+        if v.Name == game.Players.LocalPlayer.Name then -- checks if you are in the creepers team
+            for i,v in pairs(game:GetService("CoreGui").RobloxGui.PerformanceStats:GetDescendants()) do
+                if v.ClassName == "TextLabel" and v.Text == "Ping" then
+                    for i,v in pairs(v.Parent:GetChildren()) do
+                        if v.Name == "ValueLabel" then
+                            local oldping = string.gsub(v.Text," ms","")
+                            local ping = (oldping/1000) -- divides ping by 1000
+                            local explodetime = 2.65 -- normal explode time - 0.05
+                            local total = (explodetime-ping)
+                            game:GetService("ReplicatedStorage").Remotes.Explode:InvokeServer()
+                            wait(total)
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players[selectedoption].Character.HumanoidRootPart.CFrame
+                        end
+                    end
+                end
+            end
+        end
+    end
+    for i,v in pairs(game.Teams.Humans:GetPlayers()) do
+        if v.Name == game.Players.LocalPlayer.Name then -- checks if you are in the humans team
+            print("bruh")
+        end
+    end
+end)
+
+
+
+A1:NewButton("tp to (selected)", "a little bit sus", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace")[selectedoption].HumanoidRootPart.CFrame
+end)
+
+A1:NewButton("delete shields", "HOW DID HE DAMAGE ME!!!", function()
+    for i,v in pairs(game:GetDescendants()) do
+        if v.Name == "Shield" and v.Parent.Name ~= "ItemWeapons" and v.Parent.Name ~= "Items" then
+            v:Destroy()
+        end
+    end
+end)
+
+A1:NewButton("Delete Creeper Cons", "deletes creeper cons", function()
+    game.Players.LocalPlayer.Character.CreeperCons:Destroy()
+end)
+
+A1:NewToggle("auto delete creeper cons", "auto deletes the creepercons", function(bool)
+    getgenv().deletecreepercon = bool
+    if bool then
+        deletecreepercon()
+    end
+end)
+
+A1:NewToggle("auto delete tnt white part", "auto deletes the tnt kill thing", function(bool)
+    getgenv().deltnt = bool
+    if bool then
+        deltnt()
+    end
+end)
+
+
+A1:NewButton("Become Jesus", "walk on water", function()
+    for i,v in pairs(game:GetService("Workspace").Map:GetChildren()) do
+        if v.ClassName == "Part" and v.Name == "Water" then
+            for i,v in pairs(v:GetChildren()) do
+                if v.ClassName == "TouchTransmitter" then
+                    v:Destroy()
+                end
+            end
+        end
+        if v.ClassName == "Script" and v.Name == "Water" then
+            v:Destroy()
+        end
+    end
+end)
+
+A1:NewButton("cobwebs dont effect", "no slowness", function()
+    for i,v in pairs(game.Workspace.Map.ExplodableBlocks:GetDescendants()) do
+        if v.Name == "Cobweb" then
+            for i,v in pairs(v.Parent:GetChildren()) do
+                if v.ClassName == "TouchTransmitter" then
+                    v:Destroy()
+                end
+            end
+        end
+    end
+end)
+
+A1:NewButton("delete ragdoll", "no ragdoll!!", function()
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v.Name == "RagDollHandler" then
+            v:Destroy()
+        end
+        if v.Name == "RagDollClient" then
+            v:Destroy()
+        end
+    end
+end)
+
+A1:NewButton("show/size iron golem hitbox", "big hitbox!!", function()
+    for i,v in pairs(game:GetService("Workspace").Items:GetChildren()) do
+        if v.Name == "Iron Golem" then
+            v.HitBox.Transparency = 0.5
+            v.HitBox.CanCollide = false
+            v.HitBox.Size = Vector3.new("50","50","50")
+        end
+    end
+end)
+
+A1:NewButton("size weapon 420!!", "bigg hitbox!!", function()
+    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+        if v.ClassName == "Tool" and v.Name ~= "Bow" and v.Name ~= "Telekinesis Gun" and v.Name ~= "Build" and v.Name ~= "Delete" and v.Name ~= "Shield" and v.Name ~= "TNT" and v.Name ~= "Golem" and v.Name ~= "Tele Pearl" and v.Name ~= "BloxyCola" and v.Name ~= "Warhammer" then
+            v.Handle.CanCollide = false
+            v.Handle.Size = Vector3.new("420","420","420")
+        end
+        if v.ClassName == "Tool" and v.Name == "Warhammer" then
+            v.HitBox.Transparency = 0
+            v.HitBox.Size = Vector3.new("420","420","420")
+        end
+        if v.ClassName == "Tool" and v.Name == "Emerald Axe" then
+            v.HitBox.Transparency = 0
+            v.HitBox.Size = Vector3.new("420","420","420")
+        end
+    end
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+        if v.ClassName == "Tool" and v.Name ~= "Bow" and v.Name ~= "Telekinesis Gun" and v.Name ~= "Build" and v.Name ~= "Delete" and v.Name ~= "Shield" and v.Name ~= "TNT" and v.Name ~= "Golem" and v.Name ~= "Tele Pearl" and v.Name ~= "BloxyCola" and v.Name ~= "Warhammer" then
+            v.Handle.CanCollide = false
+            v.Handle.Size = Vector3.new("420","420","420")
+        end
+        if v.ClassName == "Tool" and v.Name == "Warhammer" then
+            v.HitBox.Transparency = 0
+            v.HitBox.Size = Vector3.new("420","420","420")
+        end
+        if v.ClassName == "Tool" and v.Name == "Emerald Axe" then
+            v.HitBox.Transparency = 0
+            v.HitBox.Size = Vector3.new("420","420","420")
+        end
+    end
+end)
+
+A1:NewButton("size other player weapon 0.01!!", "really small hitbox!!", function()
+    for i,v in pairs(game.Teams.Humans:GetPlayers()) do
+        if v.Name ~= game.Players.LocalPlayer.Name then
+            for i,v in pairs(v.Backpack:GetChildren()) do
+                if v.ClassName == "Tool" and v.Name ~= "Bow" and v.Name ~= "Telekinesis Gun" and v.Name ~= "Build" and v.Name ~= "Delete" and v.Name ~= "Shield" and v.Name ~= "TNT" and v.Name ~= "Golem" and v.Name ~= "Tele Pearl" and v.Name ~= "BloxyCola" and v.Name ~= "Warhammer" then
+                    v.Handle.CanCollide = false
+                    v.Handle.Size = Vector3.new("0.01","0.01","0.01")
+                end
+                if v.ClassName == "Tool" and v.Name == "Warhammer" then
+                    v.HitBox.Transparency = 0
+                    v.HitBox.Size = Vector3.new("0.01","0.01","0.01")
+                end
+                if v.ClassName == "Tool" and v.Name == "Emerald Axe" then
+                    v.HitBox.Transparency = 0
+                    v.HitBox.Size = Vector3.new("0.01","0.01","0.01")
+                end
+            end
+            for i,v in pairs(v.Character:GetChildren()) do
+                if v.ClassName == "Tool" and v.Name ~= "Bow" and v.Name ~= "Telekinesis Gun" and v.Name ~= "Build" and v.Name ~= "Delete" and v.Name ~= "Shield" and v.Name ~= "TNT" and v.Name ~= "Golem" and v.Name ~= "Tele Pearl" and v.Name ~= "BloxyCola" and v.Name ~= "Warhammer" then
+                    v.Handle.CanCollide = false
+                    v.Handle.Size = Vector3.new("0.01","0.01","0.01")
+                end
+                if v.ClassName == "Tool" and v.Name == "Warhammer" then
+                    v.HitBox.Transparency = 0
+                    v.HitBox.Size = Vector3.new("0.01","0.01","0.01")
+                end
+                if v.ClassName == "Tool" and v.Name == "Emerald Axe" then
+                    v.HitBox.Transparency = 0
+                    v.HitBox.Size = Vector3.new("0.01","0.01","0.01")
+                end
+            end
+        end
+    end
+end)
+
+
+A1:NewToggle("size arrow 5", "big arrows", function(bool)
+    getgenv().bigarrows = bool
+    if bool then
+        bigarrows()
+    end
+end)
+
+A1:NewToggle("tp arrows to creepers", "funni kill", function(bool)
+    getgenv().tparrows = bool
+    if bool then
+        tparrows()
+    end
+end)
+
+
+A1:NewButton("swords dont have cooldown", "no cooldown", function()
+    for i,v in pairs(game:GetDescendants()) do
+        if v.Name == "SwingRate" and v.Parent.Name == "Configuration" then
+            v.Value = 0
+        end
+    end
+end)
+
+A1:NewButton("print votekicks", "yes", function()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.VoteKicks:GetChildren()) do
+        if v.ClassName == "BoolValue" then
+            print(v.Name)
+            print("if theres none, you havent been votekicked yet")
+        end
+    end
+end)
+
+A1:NewButton("delete votekicks", "yes", function()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.VoteKicks:GetChildren()) do
+        if v.ClassName == "BoolValue" then
+            v:Destroy()
+        end
+    end
+end)
+
+A1:NewButton("open all trapdoors/doors", "may open other stuff but whatever", function()
+    for i,v in pairs(game:GetService("Workspace").Map.ExplodableBlocks:GetDescendants()) do
+        if v.ClassName == "ClickDetector" then
+            fireclickdetector(v)
+        end
+    end
+end)
+
+
+A1:NewButton("kill", "ping must be 50 - 400", function()
+    for i,v in pairs(game.Teams.Creepers:GetPlayers()) do
+        if v.Name == game.Players.LocalPlayer.Name then -- checks if you are in the creepers team
+            for i,v in pairs(game:GetService("CoreGui").RobloxGui.PerformanceStats:GetDescendants()) do
+                if v.ClassName == "TextLabel" and v.Text == "Ping" then
+                    for i,v in pairs(v.Parent:GetChildren()) do
+                        if v.Name == "ValueLabel" then
+                            local oldping = string.gsub(v.Text," ms","")
+                            local ping = (oldping/1000) -- divides ping by 1000
+                            local explodetime = 2.65 -- normal explode time - 0.05
+                            local total = (explodetime-ping)
+                            game:GetService("ReplicatedStorage").Remotes.Explode:InvokeServer()
+                            wait(total)
+                            for i,v in pairs(game.Teams.Humans:GetPlayers()) do
+                                if v.Name ~= "." then -- if you dont wanna kill your friend, replace "." with your friends name
+                                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    for i,v in pairs(game.Teams.Humans:GetPlayers()) do
+        if v.Name == game.Players.LocalPlayer.Name then -- checks if you are in the humans team
+            print("bruh")
+        end
+    end
+end)
+
+A1:NewButton("print possible glitched creeper bodies", "it may mistake normal charged creepers", function()
+    for i,v in pairs(game.Workspace:GetDescendants()) do
+        if v.Name == "Charged" and v.Parent.PrimaryPart ~= nil then
+            print(v.Parent.Parent.Parent,v.Parent.Parent,v.Parent,v.Parent.HumanoidRootPart.CFrame)
+        end
+    end
+    print("completed, if theres nothing printed no charged creepers are here")
+end)
+
+A1:NewButton("show scaffolding hitbox", "trusses are shown", function()
+    for i,v in pairs(game.Workspace.Map.ExplodableBlocks:GetDescendants()) do
+        if v.Name == "Block" and v.Value == "Scaffolding" then
+            for i,v in pairs(v.Parent:GetDescendants()) do
+                if v.Name == "Truss" then
+                    v.Transparency = 0
+                end
+            end
+        end
+    end
+end)
+
+A1:NewToggle("show shop", "show the shop", function(bool)
+    if bool then
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.ShopButton.Visible = true
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.ShopFrame.Visible = true
+    else
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.ShopButton.Visible = false
+        game:GetService("Players").LocalPlayer.PlayerGui.ShopGUI.ShopFrame.Visible = false
+    end
+end)
+
+A1:NewButton("delete all blocks you placed", "delete", function()
+    for i,v in pairs(game:GetService("Workspace").Map.ExplodableBlocks:GetChildren()) do
+        local A_1 = v
+        local Event = game:GetService("ReplicatedStorage").Remotes.DeleteBlock
+        Event:FireServer(A_1)
+    end
+end)
+
+
+A1:NewToggle("esp", "esp", function(bool)
+    if bool then
+        for i,v in pairs(game.CoreGui:GetChildren()) do
+            if v.Name == "playeresp" then
+                v:Destroy()
+            end
+        end
+        local folder = Instance.new("Folder")
+        folder.Parent = game.CoreGui
+        folder.Name = "playeresp"
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer then
+                for i,v in pairs(v.Character:GetChildren()) do
+                    if v:IsA("BasePart") then
+                        local box = Instance.new("BoxHandleAdornment")
+                        box.Parent = folder
+                        box.Color3 = v.Color
+                        box.Size = v.Size
+                        box.ZIndex = 10
+                        box.Adornee = v
+                        box.Name = v.Name
+                        box.AlwaysOnTop = true
+                        box.Visible = true
+                        box.Transparency = 0.5
+                    end
+                end
+            end
+        end
+        getgenv().textloop = bool
+        for i,v in pairs(game.CoreGui:GetChildren()) do
+            if v.Name == "playeresptexttest" then
+                v:Destroy()
+            end
+        end
+        wait(1)
+        local folder = Instance.new("Folder")
+        folder.Parent = game.CoreGui
+        folder.Name = "playeresptext"
+        for i,v in pairs(game.Players:GetPlayers()) do
+            if v ~= game.Players.LocalPlayer and v.Character.Head and v.Character.Humanoid then
+                local bbgui = Instance.new("BillboardGui")
+                bbgui.Name = "playeresptext"
+                bbgui.Adornee = v.Character.Head
+                bbgui.Parent = folder
+                bbgui.AlwaysOnTop = true
+                bbgui.Name = v.Name
+                bbgui.Size = UDim2.new(0, 500, 0, 10)
+                local text = Instance.new("TextLabel")
+                text.Parent = bbgui
+                text.TextSize = 10
+                text.Name = v.Name
+                text.Size = UDim2.new(0, 500, 0, 10)
+                text.BackgroundTransparency = 1
+                text.TextColor3 = Color3.fromRGB(v.TeamColor.Color.R*255,game.Players.LocalPlayer.TeamColor.Color.G*255,game.Players.LocalPlayer.TeamColor.Color.B*255)
+				text.Text = ("Name: ".. v.Name.. " Health: ".. math.floor(v.Character.Humanoid.Health).. " Studs: ".. math.floor(game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position)))
+				function textloop()
+                    spawn(function()
+                        while getgenv().textloop do
+                            if v ~= game.Players.LocalPlayer and v.Character.Head and v.Character.Humanoid then
+								text.Text = ("Name: ".. v.Name.. " Health: ".. math.floor(v.Character.Humanoid.Health).. " Studs: ".. math.floor(game.Players.LocalPlayer:DistanceFromCharacter(v.Character.HumanoidRootPart.Position)))
+								wait()
+                            end
+                        end
+                    end)
+                end
+                if getgenv().textloop then
+                    textloop()
+                end
+            end
+        end
+    else
+        wait(.1)
+        for i,v in pairs(game.CoreGui:GetChildren()) do
+            if v.Name == "playeresp" then
+                v:Destroy()
+            end
+        end
+        wait(.1)
+        for i,v in pairs(game.CoreGui:GetChildren()) do
+            if v.Name == "playeresptext" then
+                v:Destroy()
+            end
+        end
+    end
+end)
+
+A1:NewButton("rejoin", "rejoins", function()
+    game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+end)
+
+A1:NewKeybind("toggleui", "toggleui", Enum.KeyCode.RightControl, function()
+    Library:ToggleUI()
+end)
+
+B1:NewKeybind("Telekenisis", "only works when your a human", Enum.KeyCode.T, function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/3HaC8vY3",true))()
+    print("done!")
+end)
+
+B1:NewButton("infinite yield", "by edge, zwolf, moon, toon", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))()
+end)
+
+B1:NewButton("dark dex v3", "by moon, wally, ic3, and hamstagang", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Babyhamsta/RBLX_Scripts/main/Universal/BypassedDarkDexV3.lua", true))()
+end)
+
+B1:NewButton("simple spy", "by exx", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SimpleSpySource/master/SimpleSpy.lua"))()
+end)
+
+B1:NewToggle("stats gui", "by me", function(bool)
+    getgenv().statsgui = bool
+    if bool then
+        wait(.1)
+        scrgui.Enabled = true
+        statsgui()
+    else
+        scrgui.Enabled = false
+    end
+end)
+
+B1:NewButton("Crapper Chaos", "by Blame The Lag", function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/KKVPEXBN"))()
+end)
+
+B1:NewButton("FE HAT FLING", "fling undetected (made by bluecat)", function()
+    loadstring(game:HttpGet('https://gist.githubusercontent.com/1BlueCat/544f7efbe88235666b5b7add65b7344d/raw/f20804bb85542dcc3bc938982e1f05b7ff05cded/FE%2520Hat%2520Fling'))()
+end)
+
+B1:NewButton("fling all script", "for humans: fling detected (made by ???)", function()
+    loadstring(game:HttpGet('https://github.com/DigitalityScripts/roblox-scripts/raw/main/loop%20fling%20all'))()
+end)
+
+
+
+
+
+
+
+
+
+
+
+function deletecreepercon()
+    spawn(function()
+        while getgenv().deletecreepercon do
+            for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                if v.Name == "CreeperCons" then
+                    v:Destroy()
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+function placeunanchored()
+    spawn(function()
+        while getgenv().placeunanchored do
+            local x = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X)
+            local y = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y-4)
+            local z = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
+            local xround = (Round(x))
+            local yround = (Round(y))
+            local zround = (Round(z))
+            local A_1 = Vector3.new(xround, yround, zround)
+            local A_2 = Vector3.new(0, 0, 0)
+            local A_3 = (selectedblock)
+            local Event = game:GetService("ReplicatedStorage").Remotes.PlaceBlock
+            Event:FireServer(A_1, A_2, A_3)
+            wait()
+        end
+    end)
+end
+
+function statsgui()
+    spawn(function()
+        while getgenv().statsgui do
+            local htext = (game:GetService("ReplicatedStorage").Values.Humans.Value)
+            local ctext = (game:GetService("ReplicatedStorage").Values.Creepers.Value)
+            local ttest = (game:GetService("ReplicatedStorage").Values.Timer.Value)
+            humans.Text = htext
+            creepers.Text = ctext
+            timer.Text = ttest
+            wait(.1)
+        end
+    end)
+end
+
+
+function deltnt()
+    spawn(function()
+        while getgenv().deltnt do
+            for i,v in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                if v.Name == "WhitePart" then
+                    for i,v in pairs(v:GetChildren()) do
+                        if v.ClassName == "TouchTransmitter" then
+                            v:Destroy()
+                        end
+                    end
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+function deletecreepercons2()
+    for i, v in pairs(game:GetDescendants()) do
+        local cval = game.Players.LocalPlayer.Character
+        if v.Name == "CreeperCons" and v.Parent.Name == (cval) then
+            v:Destroy()
+        end
+        wait()
+    end
+end
+
+function bigarrows()
+    spawn(function()
+        while getgenv().bigarrows do
+            for i,v in pairs(game.Workspace.Items:GetChildren()) do
+                if v.Name == "Arrow" then
+                    v.Size = Vector3.new("5","5","5")
+                    v.CanCollide = false
+                    v.Transparency = 0
+                end
+            end
+            wait(.1)
+        end
+    end)
+end
+
+function tparrows()
+    spawn(function()
+        while getgenv().tparrows do
+            for i,b in pairs(game.Teams.Creepers:GetPlayers()) do
+                for i,v in pairs(game:GetService("Workspace").Items:GetChildren()) do
+                    if v.Name == "Arrow" then
+                        v.CFrame = b.Character.Head.CFrame
+                    end
+                end
+            end
+            wait()
+        end
+    end)
+end
+
+
+
+local function Round(r)
+    local divided = r / 4
+    local rounded = 4 * math.floor(divided)
+    return rounded
+end
+
+function bbay()
+    spawn(function()
+        while getgenv().bbay do
+            game.ReplicatedStorage.Values.Game.Value = false
+            local x = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.X)
+            local y = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Y)
+            local z = math.floor(game.Players.LocalPlayer.Character.HumanoidRootPart.Position.Z)
+            local xround = (Round(x))
+            local yround = (Round(y))
+            local zround = (Round(z))
+            local A_1 = Vector3.new(xround, yround-4, zround)
+            local A_2 = Vector3.new(0, 0, 0)
+            local A_3 = (selectedblock)
+            local Event = game:GetService("ReplicatedStorage").Remotes.PlaceBlock
+            Event:FireServer(A_1, A_2, A_3)
+            yround = (Round(y))
+            local A_1 = Vector3.new(xround, yround-8, zround)
+            local A_2 = Vector3.new(0, 0, 0)
+            local A_3 = (selectedblock)
+            local Event = game:GetService("ReplicatedStorage").Remotes.PlaceBlock
+            Event:FireServer(A_1, A_2, A_3)
+            wait()
+        end
+    end)
+end
+
+
+
+
+
+
+
+
+game:GetService("ReplicatedStorage").Values:WaitForChild("Hint")
+game:GetService("ReplicatedStorage").Values.Hint.Value = "Created By 2AreYouMental110"
+
+game:GetService("ReplicatedStorage").Values.Hint:GetPropertyChangedSignal("Value"):connect(function()
+    if game:GetService("ReplicatedStorage").Values.Hint.Value ~= "Created By 2AreYouMental110" then
+        wait(2)
+        game:GetService("ReplicatedStorage").Values.Hint.Value = "Created By 2AreYouMental110"
+        wait(3)
+        if game:GetService("ReplicatedStorage").Values.Hint.Value ~= "Created By 2AreYouMental110" then
+            repeat
+            game:GetService("ReplicatedStorage").Values.Hint.Value = "Created By 2AreYouMental110"
+            wait(2)
+            until game:GetService("ReplicatedStorage").Values.Hint.Value == "Created By 2AreYouMental110"
+        end
+    end
+end)
+
+
+
+
+
+for i,v in pairs(game.Players:GetPlayers()) do
+    if v:GetRankInGroup(5683059) >= 7 then
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Moderator Already Ingame!",
+        Text = (v.Name)
+        })
+        rconsoleprint("mod detected!",v.Name)
+    end
+    if v:GetRankInGroup(5683059) == 3 then
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Helper Already Ingame!",
+        Text = (v.Name)
+        })
+        rconsoleprint("@@RED@@")
+        rconsoleprint("Helper Already Ingame!",v.Name)
+    end
+end
+
+game.Players.PlayerAdded:Connect(function(plr)
+    wait(.5)
+    if plr:GetRankInGroup(5683059) >= 7 then
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Moderator Joined!",
+        Text = (plr.Name)
+        })
+        rconsoleprint("@@RED@@")
+        rconsoleprint("mod detected!",plr.Name)
+    end
+    if plr:GetRankInGroup(5683059) == 3 then
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "Helper Joined!",
+        Text = (plr.Name)
+        })
+        rconsoleprint("@@RED@@")
+        rconsoleprint("Helper detected!",plr.Name)
+    end
+    if plr:GetRankInGroup(5683059) <= 1 then
+        game:GetService("StarterGui"):SetCore("SendNotification", { 
+        Title = "normal player joined",
+        Text = (plr.Name)
+        })
+    end
+end)
+
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+Title = "Successfully Loaded CC Script!",
+Text = "Successfully Loaded CC Script!"
+})
