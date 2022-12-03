@@ -1,0 +1,4092 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local Window = OrionLib:MakeWindow({Icon ="rbxassetid://6031225809", IntroIcon ="rbxassetid://6031225809", IntroText ="NauHub Icons Kit", Name = "NauHub Icons Kit", HidePremium = false, SaveConfig = true, ConfigFolder = "icons"})
+local Credit = Window:MakeTab({
+	Name = "Credits",
+	Icon = "rbxassetid://6026568227",
+	PremiumOnly = false
+})
+Credit:AddButton({
+	Name = "Icons By NauHub: Nau#4866",
+	Callback = function()
+      		setclipboard("https://discord.gg/XHrQ6DPzcb")
+              OrionLib:MakeNotification({
+                Name = "NauHub",
+                Content = "Copied Invite Link!",
+                Image = "rbxassetid://4483345998",
+                Time = 5
+            })
+  	end    
+})
+
+Window:MakeTab({
+	Name = "-- Action --",
+	Icon = "rbxassetid://6026647898",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "accessibility",
+	Icon = "rbxassetid://6022668887",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "accessibility new",
+	Icon = "rbxassetid://6022668945",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "accessible",
+	Icon = "rbxassetid://6022668902",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "accessible forward",
+	Icon = "rbxassetid://6022668906",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account balance",
+	Icon = "rbxassetid://6022668900",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account wallet",
+	Icon = "rbxassetid://6022668892",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account box",
+	Icon = "rbxassetid://6023426915",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account circle",
+	Icon = "rbxassetid://6022668898",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account cart",
+	Icon = "rbxassetid://6022668875",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add task",
+	Icon = "rbxassetid://6022668912",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add drive",
+	Icon = "rbxassetid://6022860335",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add chart",
+	Icon = "rbxassetid://6023426905",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "admin panel",
+	Icon = "rbxassetid://6022668961",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alarm",
+	Icon = "rbxassetid://6023426910",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alarm add",
+	Icon = "rbxassetid://6023426898",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alarm off",
+	Icon = "rbxassetid://6023426901",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alarm on",
+	Icon = "rbxassetid://6023426920",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alarm off",
+	Icon = "rbxassetid://6023426901",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "all inbox",
+	Icon = "rbxassetid://6022668909",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "all out",
+	Icon = "rbxassetid://6022668876",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "anylytics",
+	Icon = "rbxassetid://6022668884",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "anchor",
+	Icon = "rbxassetid://6023426906",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "android",
+	Icon = "rbxassetid://6022668966",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "annoucement",
+	Icon = "rbxassetid://6022668946",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "api",
+	Icon = "rbxassetid://6022668911",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "app blocking",
+	Icon = "rbxassetid://6022668952",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "around circle down",
+	Icon = "rbxassetid://6022668877",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "around circle up",
+	Icon = "rbxassetid://6022668934",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow right",
+	Icon = "rbxassetid://6022668890",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "article",
+	Icon = "rbxassetid://6022668907",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "aspect ratio",
+	Icon = "rbxassetid://6022668895",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assessment",
+	Icon = "rbxassetid://6022668897",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assignment",
+	Icon = "rbxassetid://6022668882",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assignment late",
+	Icon = "rbxassetid://6022668880",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assignment return",
+	Icon = "rbxassetid://6023426931",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assignment turned in",
+	Icon = "rbxassetid://6023426904",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "autorenew",
+	Icon = "rbxassetid://6023565901",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "backup",
+	Icon = "rbxassetid://6023426911",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "backup table",
+	Icon = "rbxassetid://6022860338",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "batch prediction",
+	Icon = "rbxassetid://6022860334",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "book",
+	Icon = "rbxassetid://6022860343",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "book online",
+	Icon = "rbxassetid://6022860332",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bookmark",
+	Icon = "rbxassetid://6022852108",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bookmark border",
+	Icon = "rbxassetid://6022860339",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bookmarks",
+	Icon = "rbxassetid://6023426924",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bug report",
+	Icon = "rbxassetid://6022852107",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "build",
+	Icon = "rbxassetid://6023426938",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "build circle",
+	Icon = "rbxassetid://6023426952",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cached",
+	Icon = "rbxassetid://6023426921",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "calender today",
+	Icon = "rbxassetid://6022668917",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "calender view day",
+	Icon = "rbxassetid://6023426946",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cancel send",
+	Icon = "rbxassetid://6022668963",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "card giftcard",
+	Icon = "rbxassetid://6023426978",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "card membership",
+	Icon = "rbxassetid://6023426942",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "card travel",
+	Icon = "rbxassetid://6023426925",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "change history",
+	Icon = "rbxassetid://6023426914",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "check circle",
+	Icon = "rbxassetid://6023426945",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "check circle outline",
+	Icon = "rbxassetid://6023426909",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "chrome reader",
+	Icon = "rbxassetid://6023426912",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "circle notification",
+	Icon = "rbxassetid://6023426923",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "close fullscreen",
+	Icon = "rbxassetid://6023426928",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "code",
+	Icon = "rbxassetid://6022668955",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "comment bank",
+	Icon = "rbxassetid://6023426937",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "commute",
+	Icon = "rbxassetid://6022668901",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "compare arrows",
+	Icon = "rbxassetid://6022668951",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "compress",
+	Icon = "rbxassetid://6022668878",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "contact page",
+	Icon = "rbxassetid://6022668881",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "contact support",
+	Icon = "rbxassetid://6022668879",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "contactless",
+	Icon = "rbxassetid://6022668886",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "copyright",
+	Icon = "rbxassetid://6023565898",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "dangerous",
+	Icon = "rbxassetid://6022668916",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "dashboard",
+	Icon = "rbxassetid://6022668883",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "dashboard customize",
+	Icon = "rbxassetid://6022668899",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "date range",
+	Icon = "rbxassetid://6022668894",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "delete",
+	Icon = "rbxassetid://6022668885",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "delete forever",
+	Icon = "rbxassetid://6022668939",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "delete outline",
+	Icon = "rbxassetid://6022668962",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "description",
+	Icon = "rbxassetid://6022668888",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "disable by default",
+	Icon = "rbxassetid://6023426939",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dns",
+	Icon = "rbxassetid://6023426958",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "done",
+	Icon = "rbxassetid://6023426926",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "done all",
+	Icon = "rbxassetid://6023426929",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "done outline",
+	Icon = "rbxassetid://6023426936",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "drag indicator",
+	Icon = "rbxassetid://6023426962",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dynamic form",
+	Icon = "rbxassetid://6023426970",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "eco",
+	Icon = "rbxassetid://6023426988",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "edit off",
+	Icon = "rbxassetid://6023426983",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "eject",
+	Icon = "rbxassetid://6023426930",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "euro symbol",
+	Icon = "rbxassetid://6023426954",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "event",
+	Icon = "rbxassetid://6023426959",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "exit to app",
+	Icon = "rbxassetid://6023426922",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "expand",
+	Icon = "rbxassetid://6022668891",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "explore",
+	Icon = "rbxassetid://6023426941",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "explore off",
+	Icon = "rbxassetid://6023426953",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "extension",
+	Icon = "rbxassetid://6023565892",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "face",
+	Icon = "rbxassetid://6023426944",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "favourite",
+	Icon = "rbxassetid://6023426974",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "favourite outline",
+	Icon = "rbxassetid://6023565882",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "feedback",
+	Icon = "rbxassetid://6023426957",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "filter alt",
+	Icon = "rbxassetid://6023426984",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "find in page",
+	Icon = "rbxassetid://6023426986",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "find replace",
+	Icon = "rbxassetid://6023426979",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "fingerprint",
+	Icon = "rbxassetid://6023565895",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "flaky",
+	Icon = "rbxassetid://6031082523",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "flight land",
+	Icon = "rbxassetid://6023565897",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "flight takeoff",
+	Icon = "rbxassetid://6023565891",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "flip to back",
+	Icon = "rbxassetid://6023565896",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "flip to front",
+	Icon = "rbxassetid://6023565894",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "g translate",
+	Icon = "rbxassetid://6031082526",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "gavel",
+	Icon = "rbxassetid://6023565902",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "get app",
+	Icon = "rbxassetid://6023565889",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "gif",
+	Icon = "rbxassetid://6031082540",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "grade",
+	Icon = "rbxassetid://6026568189",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "group work",
+	Icon = "rbxassetid://6023565910",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "help center",
+	Icon = "rbxassetid://6026568192",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "help outline",
+	Icon = "rbxassetid://6026568201",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "highlight alt",
+	Icon = "rbxassetid://6023565913",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "highlight off",
+	Icon = "rbxassetid://6023565916",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "history",
+	Icon = "rbxassetid://6026568197",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "history outline",
+	Icon = "rbxassetid://6026568196",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "home filled",
+	Icon = "rbxassetid://6026568198",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "horizontal split",
+	Icon = "rbxassetid://6026568194",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "hourglass off",
+	Icon = "rbxassetid://6026568193",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "info",
+	Icon = "rbxassetid://6026568227",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "info outline",
+	Icon = "rbxassetid://6026568210",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "input",
+	Icon = "rbxassetid://6026568225",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "integration",
+	Icon = "rbxassetid://6026568214",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "invert colour",
+	Icon = "rbxassetid://6026568253",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "label",
+	Icon = "rbxassetid://6031082525",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "label import",
+	Icon = "rbxassetid://6026568215",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "label import outline",
+	Icon = "rbxassetid://6026568199",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "label off",
+	Icon = "rbxassetid://6026568209",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "label outline",
+	Icon = "rbxassetid://6026568207",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "language",
+	Icon = "rbxassetid://6026568213",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "launch",
+	Icon = "rbxassetid://6026568211",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "leaderboard",
+	Icon = "rbxassetid://6026568216",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lightbulb",
+	Icon = "rbxassetid://6026568247",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lightbulb outline",
+	Icon = "rbxassetid://6026568254",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "line style",
+	Icon = "rbxassetid://6026568276",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "line weight",
+	Icon = "rbxassetid://6026568226",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "list",
+	Icon = "rbxassetid://6026568229",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lock clock",
+	Icon = "rbxassetid://6026568260",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lock open",
+	Icon = "rbxassetid://6026568220",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lock outline",
+	Icon = "rbxassetid://6031082533",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "login",
+	Icon = "rbxassetid://6031082527",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "logout",
+	Icon = "rbxassetid://6031082522",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "loyalty",
+	Icon = "rbxassetid://6026568237",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "mark as unread",
+	Icon = "rbxassetid://6026568223",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "markunread",
+	Icon = "rbxassetid://6031082531",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "maximaze",
+	Icon = "rbxassetid://6031082522",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "mediation",
+	Icon = "rbxassetid://6026568249",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "minimize",
+	Icon = "rbxassetid://6026568240",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "nightlight",
+	Icon = "rbxassetid://6031084743",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "not accessible",
+	Icon = "rbxassetid://6026568269",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "not started",
+	Icon = "rbxassetid://6026568232",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "note add",
+	Icon = "rbxassetid://6031084749",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "offline bolt",
+	Icon = "rbxassetid://6031084742",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "online prediction",
+	Icon = "rbxassetid://6026568239",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "opacity",
+	Icon = "rbxassetid://6026568295",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "open in browser",
+	Icon = "rbxassetid://6026568266",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "open in full",
+	Icon = "rbxassetid://6026568245",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "open in new",
+	Icon = "rbxassetid://6026568256",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "open with",
+	Icon = "rbxassetid://6026568265",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "outbond",
+	Icon = "rbxassetid://6026568244",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "outbox",
+	Icon = "rbxassetid://6026568263",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "outgoing mail",
+	Icon = "rbxassetid://6026568242",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "outlet",
+	Icon = "rbxassetid://6031084748",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pageview",
+	Icon = "rbxassetid://6031216007",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pan tool",
+	Icon = "rbxassetid://6031084771",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "payment",
+	Icon = "rbxassetid://6031084751",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pending",
+	Icon = "rbxassetid://6031084745",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pending action",
+	Icon = "rbxassetid://6031260777",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "perm camera mic",
+	Icon = "rbxassetid://6031215983",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "perm calendar",
+	Icon = "rbxassetid://6031215990",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "perm data settings",
+	Icon = "rbxassetid://6031215991",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "perm phone msg",
+	Icon = "rbxassetid://6031215986",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "perm scan wifi",
+	Icon = "rbxassetid://6031215985",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pets",
+	Icon = "rbxassetid://6031260782",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "picture in picture",
+	Icon = "rbxassetid://6031215994",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "picture in picture alt",
+	Icon = "rbxassetid://6031215979",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "plagiarism",
+	Icon = "rbxassetid://6031243320",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "play for work",
+	Icon = "rbxassetid://6031260776",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "power",
+	Icon = "rbxassetid://6031260781",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "preview",
+	Icon = "rbxassetid://6031260793",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "print",
+	Icon = "rbxassetid://6031243324",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "privacy tip",
+	Icon = "rbxassetid://6031260784",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "publishes with changes",
+	Icon = "rbxassetid://6031243328",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "query builder",
+	Icon = "rbxassetid://6031086183",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "question answer",
+	Icon = "rbxassetid://6031086172",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "quick reply",
+	Icon = "rbxassetid://6031243319",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "receipt",
+	Icon = "rbxassetid://6031086173",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "record voice over",
+	Icon = "rbxassetid://6031243318",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "redeem",
+	Icon = "rbxassetid://6031086170",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "remove done",
+	Icon = "rbxassetid://6031086169",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "remove cart",
+	Icon = "rbxassetid://6031260778",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "reorder",
+	Icon = "rbxassetid://6031154868",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "report",
+	Icon = "rbxassetid://6031086176",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "request page",
+	Icon = "rbxassetid://6031154873",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "restore",
+	Icon = "rbxassetid://6031260800",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "restore trash",
+	Icon = "rbxassetid://6031154869",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "restore page",
+	Icon = "rbxassetid://6031154877",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "room",
+	Icon = "rbxassetid://6031154875",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "rounded corner",
+	Icon = "rbxassetid://6031154861",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "rowing",
+	Icon = "rbxassetid://6031154857",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "rule",
+	Icon = "rbxassetid://6031154859",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "saved search",
+	Icon = "rbxassetid://6031154867",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "schedule",
+	Icon = "rbxassetid://6031260808",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "schedule send",
+	Icon = "rbxassetid://6031154866",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "search",
+	Icon = "rbxassetid://6031154871",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "search off",
+	Icon = "rbxassetid://6031260783",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "send and archive",
+	Icon = "rbxassetid://6031280889",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings",
+	Icon = "rbxassetid://6031280882",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings restore",
+	Icon = "rbxassetid://6031280886",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings bluetooth",
+	Icon = "rbxassetid://6031280905",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings brightness",
+	Icon = "rbxassetid://6031280902",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings cell",
+	Icon = "rbxassetid://6031280890",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings ethernet",
+	Icon = "rbxassetid://6031280883",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings antenna",
+	Icon = "rbxassetid://6031280891",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings input",
+	Icon = "rbxassetid://6031280884",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings hdmi",
+	Icon = "rbxassetid://6031280970",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings svideo",
+	Icon = "rbxassetid://6031289444",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings overscan",
+	Icon = "rbxassetid://6031289459",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings phone",
+	Icon = "rbxassetid://6031289445",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings power",
+	Icon = "rbxassetid://6031289446",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings remote",
+	Icon = "rbxassetid://6031289442",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings voice",
+	Icon = "rbxassetid://6031265966",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "shop",
+	Icon = "rbxassetid://6031265983",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "shop two",
+	Icon = "rbxassetid://6031289461",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "shopping bag",
+	Icon = "rbxassetid://6031265970",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "shopping basket",
+	Icon = "rbxassetid://6031265997",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "smart button",
+	Icon = "rbxassetid://6031265962",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sources",
+	Icon = "rbxassetid://6031289451",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "speaker notes",
+	Icon = "rbxassetid://6031266001",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "speaker notes off",
+	Icon = "rbxassetid://6031265965",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "spellcheck",
+	Icon = "rbxassetid://6031289450",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "star rate",
+	Icon = "rbxassetid://6031265978",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "stars",
+	Icon = "rbxassetid://6031265971",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sticky note 2",
+	Icon = "rbxassetid://6031265972",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "store",
+	Icon = "rbxassetid://6031265968",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "segment",
+	Icon = "rbxassetid://6031260773",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "subject",
+	Icon = "rbxassetid://6031289452",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "subtitles off",
+	Icon = "rbxassetid://6031289466",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "supervised user",
+	Icon = "rbxassetid://6031289449",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "supervised account",
+	Icon = "rbxassetid://6031251516",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "swap horizon",
+	Icon = "rbxassetid://6031233841",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "swap horizon circle",
+	Icon = "rbxassetid://6031233833",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "swap vert",
+	Icon = "rbxassetid://6031233847",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "swap vert circle",
+	Icon = "rbxassetid://6031233839",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "swipe",
+	Icon = "rbxassetid://6031233863",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sync alt",
+	Icon = "rbxassetid://6031233840",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "system update",
+	Icon = "rbxassetid://6031251515",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tab",
+	Icon = "rbxassetid://6031233851",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tab unselected",
+	Icon = "rbxassetid://6031251505",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "table view",
+	Icon = "rbxassetid://6031233835",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotate up",
+	Icon = "rbxassetid://6031251526",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotate vert",
+	Icon = "rbxassetid://6031251518",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotation angeldown",
+	Icon = "rbxassetid://6031251513",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotation angleup",
+	Icon = "rbxassetid://6031229337",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotation down",
+	Icon = "rbxassetid://6031229334",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "text rotation none",
+	Icon = "rbxassetid://6031229344",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "theaters",
+	Icon = "rbxassetid://6031229335",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "thumb down",
+	Icon = "rbxassetid://6031229336",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "thumb down off",
+	Icon = "rbxassetid://6031229354",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "thumb up",
+	Icon = "rbxassetid://6031229347",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "thumb up off",
+	Icon = "rbxassetid://6031229342",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "timeline",
+	Icon = "rbxassetid://6031229350",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "toc",
+	Icon = "rbxassetid://6031229341",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "today",
+	Icon = "rbxassetid://6031229352",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "toll",
+	Icon = "rbxassetid://6031229343",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "touch app",
+	Icon = "rbxassetid://6031229361",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tour",
+	Icon = "rbxassetid://6031229362",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "track changes",
+	Icon = "rbxassetid://6031225814",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "translate",
+	Icon = "rbxassetid://6031225812",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "trending down",
+	Icon = "rbxassetid://6031225811",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "trending flat",
+	Icon = "rbxassetid://6031225818",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "trending up",
+	Icon = "rbxassetid://6031225816",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "unpublished",
+	Icon = "rbxassetid://6031225817",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "update",
+	Icon = "rbxassetid://6031225810",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "upgrade",
+	Icon = "rbxassetid://6031225815",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "verified",
+	Icon = "rbxassetid://6031225809",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "verified user",
+	Icon = "rbxassetid://6031225819",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "vertical split",
+	Icon = "rbxassetid://6031225820",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view agenda",
+	Icon = "rbxassetid://6031225831",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view array",
+	Icon = "rbxassetid://6031225842",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view carousel",
+	Icon = "rbxassetid://6031251507",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view column",
+	Icon = "rbxassetid://6031079172",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view day",
+	Icon = "rbxassetid://6031079153",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view headline",
+	Icon = "rbxassetid://6031079151",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view in ar",
+	Icon = "rbxassetid://6031079158",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view list",
+	Icon = "rbxassetid://6031079156",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view module",
+	Icon = "rbxassetid://6031079152",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view quilt",
+	Icon = "rbxassetid://6031079155",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view sidebar",
+	Icon = "rbxassetid://6031079160",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view stream",
+	Icon = "rbxassetid://6031079164",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "view week",
+	Icon = "rbxassetid://6031079154",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "visibility",
+	Icon = "rbxassetid://6031075931",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "visibility off",
+	Icon = "rbxassetid://6031075929",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "voice over off",
+	Icon = "rbxassetid://6031075927",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "watch later",
+	Icon = "rbxassetid://6031075924",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wps",
+	Icon = "rbxassetid://6031075926",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "work",
+	Icon = "rbxassetid://6031075939",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "work off",
+	Icon = "rbxassetid://6031075937",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "work outline",
+	Icon = "rbxassetid://6031075930",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "youtube search for",
+	Icon = "rbxassetid://6031075934",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "zoom in",
+	Icon = "rbxassetid://6031075573",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "zoom out",
+	Icon = "rbxassetid://6031075577",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "-- Navigation --",
+	Icon = "rbxassetid://6031091006",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "app settings",
+	Icon = "rbxassetid://6031090998",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "apps",
+	Icon = "rbxassetid://6031090999",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow back",
+	Icon = "rbxassetid://6031091000",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow back ios",
+	Icon = "rbxassetid://6031091003",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow downward",
+	Icon = "rbxassetid://6031090991",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow drop down",
+	Icon = "rbxassetid://6031091004",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow drop down circle",
+	Icon = "rbxassetid://6031091001",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow drop up",
+	Icon = "rbxassetid://6031090990",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow forward",
+	Icon = "rbxassetid://6031090995",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow forward ios",
+	Icon = "rbxassetid://6031091008",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow left",
+	Icon = "rbxassetid://6031091002",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow right",
+	Icon = "rbxassetid://6031090994",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "arrow upward",
+	Icon = "rbxassetid://6031090997",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assistant direction",
+	Icon = "rbxassetid://6031091005",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "assistant navigation",
+	Icon = "rbxassetid://6031091006",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "campaign",
+	Icon = "rbxassetid://6031094666",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cancel",
+	Icon = "rbxassetid://6031094677",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "check",
+	Icon = "rbxassetid://6031094667",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "chevron left",
+	Icon = "rbxassetid://6031094670",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "chevron right",
+	Icon = "rbxassetid://6031094680",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "close",
+	Icon = "rbxassetid://6031094678",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "double arrow",
+	Icon = "rbxassetid://6031094674",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "expand less",
+	Icon = "rbxassetid://6031094679",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "expand more",
+	Icon = "rbxassetid://6031094687",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "firstpage",
+	Icon = "rbxassetid://6031094682",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "fullscreen",
+	Icon = "rbxassetid://6031094681",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "fullscreen exit",
+	Icon = "rbxassetid://6031094691",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "home work",
+	Icon = "rbxassetid://6031094683",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "last page",
+	Icon = "rbxassetid://6031094686",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "legend toggle",
+	Icon = "rbxassetid://6031097233",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "menu",
+	Icon = "rbxassetid://6031097225",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "menu open",
+	Icon = "rbxassetid://6031097229",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "more horiz",
+	Icon = "rbxassetid://6031104650",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "more vert",
+	Icon = "rbxassetid://6031104648",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "north east",
+	Icon = "rbxassetid://6031097228",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "offline share",
+	Icon = "rbxassetid://6031097267",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "payments",
+	Icon = "rbxassetid://6031097227",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pivot table",
+	Icon = "rbxassetid://6031097234",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "refresh",
+	Icon = "rbxassetid://6031097226",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "south",
+	Icon = "rbxassetid://6031104646",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "south east",
+	Icon = "rbxassetid://6031104642",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "south west",
+	Icon = "rbxassetid://6031104652",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "subdirectory left",
+	Icon = "rbxassetid://6031104654",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "subdirectory right",
+	Icon = "rbxassetid://6031104647",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "switch left",
+	Icon = "rbxassetid://6031104651",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "switch right",
+	Icon = "rbxassetid://6031104649",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "unfold less",
+	Icon = "rbxassetid://6031104681",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "unfold more",
+	Icon = "rbxassetid://6031104644",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "waterfall chart",
+	Icon = "rbxassetid://6031104632",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "west",
+	Icon = "rbxassetid://6031104677",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "-- Notification --",
+	Icon = "rbxassetid://6034452676",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "account tree",
+	Icon = "rbxassetid://6034418507",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "adb",
+	Icon = "rbxassetid://6034418515",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add call",
+	Icon = "rbxassetid://6034418524",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airline seat flat",
+	Icon = "rbxassetid://6034418511",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airline seat flat angled",
+	Icon = "rbxassetid://6034418513",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airline seat individual",
+	Icon = "rbxassetid://6034418514",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airline seat legroom",
+	Icon = "rbxassetid://6034418508",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airline seat recline",
+	Icon = "rbxassetid://6034418512",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bluetooth audio",
+	Icon = "rbxassetid://6034418522",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "confirmation number",
+	Icon = "rbxassetid://6034418519",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "direction off",
+	Icon = "rbxassetid://6034418517",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "disc full",
+	Icon = "rbxassetid://6034418518",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "do not disturb",
+	Icon = "rbxassetid://6034439645",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "do not disturb alt",
+	Icon = "rbxassetid://6034461619",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "do not disturb off",
+	Icon = "rbxassetid://6034439642",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "do not disturb on",
+	Icon = "rbxassetid://6034439649",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "drive eta",
+	Icon = "rbxassetid://6034464371",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "enhanced encryption",
+	Icon = "rbxassetid://6034439652",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "event available",
+	Icon = "rbxassetid://6034439643",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "event busy",
+	Icon = "rbxassetid://6034439634",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "event note",
+	Icon = "rbxassetid://6034439637",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "folder special",
+	Icon = "rbxassetid://6034439639",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "imagesearch roller",
+	Icon = "rbxassetid://6034439635",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "live tv",
+	Icon = "rbxassetid://6034439648",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "mms",
+	Icon = "rbxassetid://6034461621",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "more",
+	Icon = "rbxassetid://6034461627",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "network check",
+	Icon = "rbxassetid://6034461631",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "network locked",
+	Icon = "rbxassetid://6034457064",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "no encryption",
+	Icon = "rbxassetid://6034457059",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "ondemand video",
+	Icon = "rbxassetid://6034457065",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "personal video",
+	Icon = "rbxassetid://6034457070",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone bluetooth",
+	Icon = "rbxassetid://6034457057",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone locked",
+	Icon = "rbxassetid://6034457058",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone missed",
+	Icon = "rbxassetid://6034457056",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone paused",
+	Icon = "rbxassetid://6034457066",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "power",
+	Icon = "rbxassetid://6034457105",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "power off",
+	Icon = "rbxassetid://6034457087",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "priority high",
+	Icon = "rbxassetid://6034457092",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sd card",
+	Icon = "rbxassetid://6034457089",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sim card alert",
+	Icon = "rbxassetid://6034452641",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sms",
+	Icon = "rbxassetid://6034452645",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sms failed",
+	Icon = "rbxassetid://6034452676",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "support agent",
+	Icon = "rbxassetid://6034452656",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sync",
+	Icon = "rbxassetid://6034452662",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sync disabled",
+	Icon = "rbxassetid://6034452649",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sync problem",
+	Icon = "rbxassetid://6034452653",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "system update",
+	Icon = "rbxassetid://6034452663",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tap and play",
+	Icon = "rbxassetid://6034452650",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "time to leave",
+	Icon = "rbxassetid://6034452660",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tv off",
+	Icon = "rbxassetid://6034452646",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "vibration",
+	Icon = "rbxassetid://6034452651",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "vpn lock",
+	Icon = "rbxassetid://6034452648",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wc",
+	Icon = "rbxassetid://6034452643",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wifi",
+	Icon = "rbxassetid://6034461626",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wifi off",
+	Icon = "rbxassetid://6034461625",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "-- Home --",
+	Icon = "rbxassetid://6026568198",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sensor door",
+	Icon = "rbxassetid://6031067241",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sensor window",
+	Icon = "rbxassetid://6031067242",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "-- Hardware --",
+	Icon = "rbxassetid://6034837803",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "browser not supported",
+	Icon = "rbxassetid://6034789875",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cast",
+	Icon = "rbxassetid://6034789876",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cast connected",
+	Icon = "rbxassetid://6034789895",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "cast for education",
+	Icon = "rbxassetid://6034789872",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "computer",
+	Icon = "rbxassetid://6034789874",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "connected tv",
+	Icon = "rbxassetid://6034789870",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "desktop mac",
+	Icon = "rbxassetid://6034789898",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "desktop windows",
+	Icon = "rbxassetid://6034789893",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "developer board",
+	Icon = "rbxassetid://6034789883",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "device hub",
+	Icon = "rbxassetid://6034789877",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "device unknown",
+	Icon = "rbxassetid://6034789884",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "device other",
+	Icon = "rbxassetid://6034789873",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dock",
+	Icon = "rbxassetid://6034789888",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "gamepad",
+	Icon = "rbxassetid://6034789879",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "headset",
+	Icon = "rbxassetid://6034789880",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "headset mic",
+	Icon = "rbxassetid://6034818383",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "headset off",
+	Icon = "rbxassetid://6034818402",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard",
+	Icon = "rbxassetid://6034818398",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard arrow down",
+	Icon = "rbxassetid://6034818372",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard arrow left",
+	Icon = "rbxassetid://6034818375",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard arrow right",
+	Icon = "rbxassetid://6034818365",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard arrow up",
+	Icon = "rbxassetid://6034818379",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard capslock",
+	Icon = "rbxassetid://6034818403",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard hide",
+	Icon = "rbxassetid://6034818386",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard return",
+	Icon = "rbxassetid://6034818370",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard tab",
+	Icon = "rbxassetid://6034818363",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "keyboard voice",
+	Icon = "rbxassetid://6034818360",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "laptop",
+	Icon = "rbxassetid://6034818367",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "laptop chromebook",
+	Icon = "rbxassetid://6034818364",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "laptop mac",
+	Icon = "rbxassetid://6034837808",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "laptop windows",
+	Icon = "rbxassetid://6034837796",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "memory",
+	Icon = "rbxassetid://6034837807",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "monitor",
+	Icon = "rbxassetid://6034837803",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "mouse",
+	Icon = "rbxassetid://6034837797",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone android",
+	Icon = "rbxassetid://6034837793",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phone iphone",
+	Icon = "rbxassetid://6034837811",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phonelink",
+	Icon = "rbxassetid://6034837801",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "phonelink off",
+	Icon = "rbxassetid://6034837804",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "point of sale",
+	Icon = "rbxassetid://6034837798",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "power input",
+	Icon = "rbxassetid://6034837794",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "router",
+	Icon = "rbxassetid://6034837806",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "scanner",
+	Icon = "rbxassetid://6034837799",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "security",
+	Icon = "rbxassetid://6034837802",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sim card",
+	Icon = "rbxassetid://6034837800",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "smart phone",
+	Icon = "rbxassetid://6034848731",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "speaker",
+	Icon = "rbxassetid://6034848746",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "speaker group",
+	Icon = "rbxassetid://6034848732",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tablet",
+	Icon = "rbxassetid://6034848733",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tablet android",
+	Icon = "rbxassetid://6034848734",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "toys",
+	Icon = "rbxassetid://6034848752",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tv",
+	Icon = "rbxassetid://6034848740",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "videogame",
+	Icon = "rbxassetid://6034848748",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "watch",
+	Icon = "rbxassetid://6034848747",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "-- Maps --",
+	Icon = "rbxassetid://6034754449",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "360",
+	Icon = "rbxassetid://6034767608",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add business",
+	Icon = "rbxassetid://6034483666",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "add location",
+	Icon = "rbxassetid://6034483672",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add location alt",
+	Icon = "rbxassetid://6034483678",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add road",
+	Icon = "rbxassetid://6034483677",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "agriculture",
+	Icon = "rbxassetid://6034483674",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "alt route",
+	Icon = "rbxassetid://6034483670",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "atm",
+	Icon = "rbxassetid://6034767614",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "attractions",
+	Icon = "rbxassetid://6034767620",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "badge",
+	Icon = "rbxassetid://6034767607",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bakery dining",
+	Icon = "rbxassetid://6034767610",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "been here",
+	Icon = "rbxassetid://6034483675",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bike scooter",
+	Icon = "rbxassetid://6034483669",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "breakfast dining",
+	Icon = "rbxassetid://6034483671",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "brunch dining",
+	Icon = "rbxassetid://6034767611",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bus alert",
+	Icon = "rbxassetid://6034767618",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "car rental",
+	Icon = "rbxassetid://6034767641",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "car repair",
+	Icon = "rbxassetid://6034767617",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "category",
+	Icon = "rbxassetid://6034767621",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "celebration",
+	Icon = "rbxassetid://6034767613",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "cleaning services",
+	Icon = "rbxassetid://6034767619",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "compass calibration",
+	Icon = "rbxassetid://6034767623",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "delivery dining",
+	Icon = "rbxassetid://6034767644",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "departure board",
+	Icon = "rbxassetid://6034767615",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "design services",
+	Icon = "rbxassetid://6034754453",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dinner dining",
+	Icon = "rbxassetid://6034754457",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "directions",
+	Icon = "rbxassetid://6034754449",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "directions bike",
+	Icon = "rbxassetid://6034754459",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "directions boat",
+	Icon = "rbxassetid://6034754442",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "directions bus",
+	Icon = "rbxassetid://6034754434",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "directions car",
+	Icon = "rbxassetid://6034754441",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "directions railway",
+	Icon = "rbxassetid://6034754433",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "directions run",
+	Icon = "rbxassetid://6034754445",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "directions walk",
+	Icon = "rbxassetid://6034754448",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dry cleaning",
+	Icon = "rbxassetid://6034754456",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "edit attributes",
+	Icon = "rbxassetid://6034754443",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "edit locations",
+	Icon = "rbxassetid://6034754439",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "edit road",
+	Icon = "rbxassetid://6034744035",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "electric bike",
+	Icon = "rbxassetid://6034744032",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "electric car",
+	Icon = "rbxassetid://6034744029",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "electric moped",
+	Icon = "rbxassetid://6034744027",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "electric rickshaw",
+	Icon = "rbxassetid://6034744043",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "electric scooter",
+	Icon = "rbxassetid://6034744041",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "electrical services",
+	Icon = "rbxassetid://6034744038",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "ev station",
+	Icon = "rbxassetid://6034744037",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "fast food",
+	Icon = "rbxassetid://6034744034",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "festival",
+	Icon = "rbxassetid://6034744031",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "flight",
+	Icon = "rbxassetid://6034744030",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "hail",
+	Icon = "rbxassetid://6034744033",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "handyman",
+	Icon = "rbxassetid://6034744057",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "hardman",
+	Icon = "rbxassetid://6034744036",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "home repair service",
+	Icon = "rbxassetid://6034744064",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "watch",
+	Icon = "rbxassetid://6034848747",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "hotel",
+	Icon = "rbxassetid://6034687977",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "layers",
+	Icon = "rbxassetid://6034687957",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local activity",
+	Icon = "rbxassetid://6034687955",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local airport",
+	Icon = "rbxassetid://6034687951",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local atm",
+	Icon = "rbxassetid://6034687953",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local bar",
+	Icon = "rbxassetid://6034687950",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local car wash",
+	Icon = "rbxassetid://6034687976",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local convenience store",
+	Icon = "rbxassetid://6034687956",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local dining",
+	Icon = "rbxassetid://6034687963",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local drink",
+	Icon = "rbxassetid://6034687965",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local fire department",
+	Icon = "rbxassetid://6034684949",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local florist",
+	Icon = "rbxassetid://6034684940",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local gas station",
+	Icon = "rbxassetid://6034684935",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local grocery store",
+	Icon = "rbxassetid://6034684933",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local hospital",
+	Icon = "rbxassetid://6034684956",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local hotel",
+	Icon = "rbxassetid://6034684939",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local laundry service",
+	Icon = "rbxassetid://6034684943",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local library",
+	Icon = "rbxassetid://6034684931",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local mall",
+	Icon = "rbxassetid://6034684934",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local movies",
+	Icon = "rbxassetid://6034684936",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local offer",
+	Icon = "rbxassetid://6034513891",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local parking",
+	Icon = "rbxassetid://6034513893",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local pharmacy",
+	Icon = "rbxassetid://6034513903",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local phone",
+	Icon = "rbxassetid://6034513884",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local pizza",
+	Icon = "rbxassetid://6034513885",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local play",
+	Icon = "rbxassetid://6034513889",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local police",
+	Icon = "rbxassetid://6034513895",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local post office",
+	Icon = "rbxassetid://6034513883",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local printshop",
+	Icon = "rbxassetid://6034513897",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local see",
+	Icon = "rbxassetid://6034513887",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "local shipping",
+	Icon = "rbxassetid://6034684926",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "local taxi",
+	Icon = "rbxassetid://6034684927",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "location pin",
+	Icon = "rbxassetid://6034684937",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "lunch dining",
+	Icon = "rbxassetid://6034684928",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "map",
+	Icon = "rbxassetid://6034684930",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "maps ugc",
+	Icon = "rbxassetid://6034509992",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "medical services",
+	Icon = "rbxassetid://6034510001",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "menu book",
+	Icon = "rbxassetid://6034509994",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "miscellaneous",
+	Icon = "rbxassetid://6034509993",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "money",
+	Icon = "rbxassetid://6034509997",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "moped",
+	Icon = "rbxassetid://6034509999",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "multiple stop",
+	Icon = "rbxassetid://6034510026",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "museum",
+	Icon = "rbxassetid://6034510005",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "my location",
+	Icon = "rbxassetid://6034509987",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "navigation",
+	Icon = "rbxassetid://6034509984",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "near me",
+	Icon = "rbxassetid://6034509996",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "near me disabled",
+	Icon = "rbxassetid://6034509988",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "nightlife",
+	Icon = "rbxassetid://6034510003",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "no meals",
+	Icon = "rbxassetid://6034510024",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "no transfer",
+	Icon = "rbxassetid://6034503363",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "not listed location",
+	Icon = "rbxassetid://6034503380",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "park",
+	Icon = "rbxassetid://6034503369",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "pedal bike",
+	Icon = "rbxassetid://6034503374",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "person pin",
+	Icon = "rbxassetid://6034503364",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "person pin circle",
+	Icon = "rbxassetid://6034503375",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "pest control",
+	Icon = "rbxassetid://6034470809",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pest control rodent",
+	Icon = "rbxassetid://6034470803",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "pin drop",
+	Icon = "rbxassetid://6034470807",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "place",
+	Icon = "rbxassetid://6034503372",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "plumbing",
+	Icon = "rbxassetid://6034470800",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "railway alert",
+	Icon = "rbxassetid://6034470823",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "ramen dining",
+	Icon = "rbxassetid://6034503377",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "rate review",
+	Icon = "rbxassetid://6034503385",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "restaurant",
+	Icon = "rbxassetid://6034503366",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "restaurant menu",
+	Icon = "rbxassetid://6034503378",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "run circle",
+	Icon = "rbxassetid://6034503367",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "satelite",
+	Icon = "rbxassetid://6034503370",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "set meal",
+	Icon = "rbxassetid://6034503368",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "store mall directory",
+	Icon = "rbxassetid://6034470811",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "streetview",
+	Icon = "rbxassetid://6034470805",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "subway",
+	Icon = "rbxassetid://6034467790",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "takeout dining",
+	Icon = "rbxassetid://6034467808",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "taxi alert",
+	Icon = "rbxassetid://6034467792",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "terrain",
+	Icon = "rbxassetid://6034467794",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "theater comedy",
+	Icon = "rbxassetid://6034467796",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "traffic",
+	Icon = "rbxassetid://6034467797",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "train",
+	Icon = "rbxassetid://6034467803",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "tram",
+	Icon = "rbxassetid://6034467806",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "transfer",
+	Icon = "rbxassetid://6034467809",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "transit",
+	Icon = "rbxassetid://6034467805",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "trip origin",
+	Icon = "rbxassetid://6034467804",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "two wheeler",
+	Icon = "rbxassetid://6034467795",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "volunteer activism",
+	Icon = "rbxassetid://6034467799",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wrong location",
+	Icon = "rbxassetid://6034467801",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "zoom out map",
+	Icon = "rbxassetid://6035229856",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "-- Device --",
+	Icon = "rbxassetid://6034996712",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "access alarm",
+	Icon = "rbxassetid://6034983844",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "access time",
+	Icon = "rbxassetid://6034983856",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "ad units",
+	Icon = "rbxassetid://6034983845",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add alarm",
+	Icon = "rbxassetid://6034983850",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "add to home screen",
+	Icon = "rbxassetid://6034983858",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "airplanemode active",
+	Icon = "rbxassetid://6034983864",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "airplanemode inactive",
+	Icon = "rbxassetid://6034983848",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "battery alert",
+	Icon = "rbxassetid://6034983843",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "battery charging full",
+	Icon = "rbxassetid://6034983849",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "battery full",
+	Icon = "rbxassetid://6034983854",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "battery unknown",
+	Icon = "rbxassetid://6034983842",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bluetooth",
+	Icon = "rbxassetid://6034983880",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "bluetooth connected",
+	Icon = "rbxassetid://6034983855",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "bluetooth disabled",
+	Icon = "rbxassetid://6034989562",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "bluetooth searching",
+	Icon = "rbxassetid://6034989553",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "brightness auto",
+	Icon = "rbxassetid://6034989545",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "brightness high",
+	Icon = "rbxassetid://6034989541",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "brightness low",
+	Icon = "rbxassetid://6034989542",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "brightness medium",
+	Icon = "rbxassetid://6034989543",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "data usage",
+	Icon = "rbxassetid://6034989568",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "developer mode",
+	Icon = "rbxassetid://6034989549",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "device thermostat",
+	Icon = "rbxassetid://6034989544",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "devices",
+	Icon = "rbxassetid://6034989540",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "dvr",
+	Icon = "rbxassetid://6034989561",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "gps fixed",
+	Icon = "rbxassetid://6034989550",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "gps not fixed",
+	Icon = "rbxassetid://6034989547",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "gps off",
+	Icon = "rbxassetid://6034989548",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "graphics eq",
+	Icon = "rbxassetid://6034989551",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "mobile friendly",
+	Icon = "rbxassetid://6034996699",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "mobile off",
+	Icon = "rbxassetid://6034996702",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "network cell",
+	Icon = "rbxassetid://6034996709",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "network wifi",
+	Icon = "rbxassetid://6034996712",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "nfc",
+	Icon = "rbxassetid://6034996698",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "reset tv",
+	Icon = "rbxassetid://6034996696",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "screenlock landscape",
+	Icon = "rbxassetid://6034996700",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "screenlock potrait",
+	Icon = "rbxassetid://6034996706",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "screenlock rotation",
+	Icon = "rbxassetid://6034996710",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "screen location",
+	Icon = "rbxassetid://6034996701",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "screen search desktop",
+	Icon = "rbxassetid://6034996711",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "sd storage",
+	Icon = "rbxassetid://6034996719",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "send to mobile",
+	Icon = "rbxassetid://6034996697",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "settings system development",
+	Icon = "rbxassetid://6035030081",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "signal cellular 0 bar",
+	Icon = "rbxassetid://6035030072",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "signal cellular 4 bar",
+	Icon = "rbxassetid://6035030076",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "signal cellular alt",
+	Icon = "rbxassetid://6035030079",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "signal cellular connected",
+	Icon = "rbxassetid://6035229858",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "signal cellular no sim",
+	Icon = "rbxassetid://6035030078",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "usb",
+	Icon = "rbxassetid://6035030080",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "wallpaper",
+	Icon = "rbxassetid://6035030102",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "widgets",
+	Icon = "rbxassetid://6035039429",
+	PremiumOnly = false
+})
+
+
+Window:MakeTab({
+	Name = "wifi lock",
+	Icon = "rbxassetid://6035039428",
+	PremiumOnly = false
+})
+
+Window:MakeTab({
+	Name = "wifi tethering",
+	Icon = "rbxassetid://6035039430",
+	PremiumOnly = false
+})
+
+OrionLib:MakeNotification({
+	Name = "NauHub",
+	Content = "NauHub Icons Have Loaded",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
