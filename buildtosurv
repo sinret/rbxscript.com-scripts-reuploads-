@@ -1,0 +1,1184 @@
+--https://www.roblox.com/games/3964975083/Build-to-survive
+
+local ToggleGuis = true
+
+local BuilttoTrollGui = Instance.new("ScreenGui")
+local Toggle = Instance.new("TextButton")
+local Menu = Instance.new("Frame")
+local GameX = Instance.new("TextButton")
+local Players = Instance.new("TextButton")
+local Tools = Instance.new("TextButton")
+local Fun = Instance.new("TextButton")
+local PlayersFrame = Instance.new("Frame")
+local Kill = Instance.new("TextButton")
+local Kick = Instance.new("TextButton")
+local Punish = Instance.new("TextButton")
+local Ragdoll = Instance.new("TextButton")
+local TeleportTo = Instance.new("TextButton")
+local Victim = Instance.new("TextBox")
+local GameFrame = Instance.new("Frame")
+local ClearBases = Instance.new("TextButton")
+local ClearWorkspace = Instance.new("TextButton")
+local RemoveMobs = Instance.new("TextButton")
+local RemoveCages = Instance.new("TextButton")
+local PermRemoveMobs = Instance.new("TextButton")
+local Shutdown = Instance.new("TextButton")
+local ToolsFrame = Instance.new("Frame")
+local AllBtools = Instance.new("TextButton")
+local Move = Instance.new("TextButton")
+local Copy = Instance.new("TextButton")
+local Delete = Instance.new("TextButton")
+local Shutdown_2 = Instance.new("Frame")
+local Question = Instance.new("TextLabel")
+local Normal = Instance.new("TextButton")
+local Full = Instance.new("TextButton")
+local Close = Instance.new("TextButton")
+local FunFrame = Instance.new("Frame")
+local CreateDeadClone = Instance.new("TextButton")
+local SpamHeadClones = Instance.new("TextButton")
+local SpamLimbClones = Instance.new("TextButton")
+local Credit = Instance.new("TextLabel")
+
+BuilttoTrollGui.Name = "Built to Troll Gui"
+BuilttoTrollGui.Parent = game.CoreGui
+BuilttoTrollGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Toggle.Name = "Toggle"
+Toggle.Parent = BuilttoTrollGui
+Toggle.BackgroundColor3 = Color3.new(0, 0, 0)
+Toggle.BorderColor3 = Color3.new(0, 0, 0)
+Toggle.BorderSizePixel = 0
+Toggle.Position = UDim2.new(0, 0, 0.634069383, 0)
+Toggle.Size = UDim2.new(0, 126, 0, 24)
+Toggle.Font = Enum.Font.Garamond
+Toggle.Text = "Built to Troll"
+Toggle.TextColor3 = Color3.new(0, 1, 1)
+Toggle.TextScaled = true
+Toggle.TextSize = 14
+Toggle.TextWrapped = true
+
+Menu.Name = "Menu"
+Menu.Parent = Toggle
+Menu.Active = true
+Menu.BackgroundColor3 = Color3.new(0, 0, 0)
+Menu.BackgroundTransparency = 0.5
+Menu.BorderColor3 = Color3.new(0, 1, 1)
+Menu.BorderSizePixel = 2
+Menu.Draggable = true
+Menu.Position =
+    UDim2.new(
+    0,
+    game.Players.LocalPlayer:GetMouse().ViewSizeX / 2.5,
+    0,
+    -game.Players.LocalPlayer:GetMouse().ViewSizeY / 2
+)
+Menu.Size = UDim2.new(0, 500, 0, 28)
+Menu.Visible = true
+
+GameX.Name = "Game"
+GameX.Parent = Menu
+GameX.BackgroundColor3 = Color3.new(0, 0, 0)
+GameX.BorderColor3 = Color3.new(0, 0, 0)
+GameX.BorderSizePixel = 0
+GameX.Size = UDim2.new(0, 100, 0, 28)
+GameX.Font = Enum.Font.Garamond
+GameX.Text = "Game | +"
+GameX.TextColor3 = Color3.new(0, 1, 1)
+GameX.TextScaled = true
+GameX.TextSize = 14
+GameX.TextWrapped = true
+
+Players.Name = "Players"
+Players.Parent = Menu
+Players.BackgroundColor3 = Color3.new(0, 0, 0)
+Players.BorderColor3 = Color3.new(0, 0, 0)
+Players.BorderSizePixel = 0
+Players.Position = UDim2.new(0.26699999, 0, 0, 0)
+Players.Size = UDim2.new(0, 100, 0, 28)
+Players.Font = Enum.Font.Garamond
+Players.Text = "Players | +"
+Players.TextColor3 = Color3.new(0, 1, 1)
+Players.TextScaled = true
+Players.TextSize = 14
+Players.TextWrapped = true
+
+Tools.Name = "Tools"
+Tools.Parent = Menu
+Tools.BackgroundColor3 = Color3.new(0, 0, 0)
+Tools.BorderColor3 = Color3.new(0, 0, 0)
+Tools.BorderSizePixel = 0
+Tools.Position = UDim2.new(0.532999992, 0, 0, 0)
+Tools.Size = UDim2.new(0, 100, 0, 28)
+Tools.Font = Enum.Font.Garamond
+Tools.Text = "Tools | +"
+Tools.TextColor3 = Color3.new(0, 1, 1)
+Tools.TextScaled = true
+Tools.TextSize = 14
+Tools.TextWrapped = true
+
+if game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+    Fun.Name = "Fun"
+    Fun.Parent = Menu
+    Fun.BackgroundColor3 = Color3.new(0, 0, 0)
+    Fun.BorderColor3 = Color3.new(0, 0, 0)
+    Fun.BorderSizePixel = 0
+    Fun.Position = UDim2.new(0.800000012, 0, 0, 0)
+    Fun.Size = UDim2.new(0, 100, 0, 28)
+    Fun.Font = Enum.Font.Garamond
+    Fun.Text = "Fun | +"
+    Fun.TextColor3 = Color3.new(0, 1, 1)
+    Fun.TextScaled = true
+    Fun.TextSize = 14
+    Fun.TextWrapped = true
+end
+
+PlayersFrame.Name = "PlayersFrame"
+PlayersFrame.Parent = Menu
+PlayersFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+PlayersFrame.BorderColor3 = Color3.new(0, 1, 1)
+PlayersFrame.BorderSizePixel = 0
+PlayersFrame.Position = UDim2.new(0.267246945, 0, 0.995716333, 0)
+PlayersFrame.Size = UDim2.new(0, 100, 0, 223)
+PlayersFrame.Visible = false
+
+Kill.Name = "Kill"
+Kill.Parent = PlayersFrame
+Kill.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Kill.BorderColor3 = Color3.new(0, 0, 0)
+Kill.BorderSizePixel = 0
+Kill.Size = UDim2.new(0, 100, 0, 25)
+Kill.Font = Enum.Font.Garamond
+Kill.Text = "Kill"
+Kill.TextColor3 = Color3.new(0, 0, 0)
+Kill.TextScaled = true
+Kill.TextSize = 14
+Kill.TextWrapped = true
+
+Kick.Name = "Kick"
+Kick.Parent = PlayersFrame
+Kick.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Kick.BorderColor3 = Color3.new(0, 0, 0)
+Kick.BorderSizePixel = 0
+Kick.Position = UDim2.new(0, 0, 0.174887896, 0)
+Kick.Size = UDim2.new(0, 100, 0, 25)
+Kick.Font = Enum.Font.Garamond
+Kick.Text = "Kick"
+Kick.TextColor3 = Color3.new(0, 0, 0)
+Kick.TextScaled = true
+Kick.TextSize = 14
+Kick.TextWrapped = true
+
+Punish.Name = "Punish"
+Punish.Parent = PlayersFrame
+Punish.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Punish.BorderColor3 = Color3.new(0, 0, 0)
+Punish.BorderSizePixel = 0
+Punish.Position = UDim2.new(0, 0, 0.356031367, 0)
+Punish.Size = UDim2.new(0, 100, 0, 25)
+Punish.Font = Enum.Font.Garamond
+Punish.Text = "Punish"
+Punish.TextColor3 = Color3.new(0, 0, 0)
+Punish.TextScaled = true
+Punish.TextSize = 14
+Punish.TextWrapped = true
+
+Ragdoll.Name = "Ragdoll"
+Ragdoll.Parent = PlayersFrame
+Ragdoll.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Ragdoll.BorderColor3 = Color3.new(0, 0, 0)
+Ragdoll.BorderSizePixel = 0
+Ragdoll.Position = UDim2.new(0, 0, 0.533632338, 0)
+Ragdoll.Size = UDim2.new(0, 100, 0, 25)
+Ragdoll.Font = Enum.Font.Garamond
+Ragdoll.Text = "Ragdoll"
+Ragdoll.TextColor3 = Color3.new(0, 0, 0)
+Ragdoll.TextScaled = true
+Ragdoll.TextSize = 14
+Ragdoll.TextWrapped = true
+
+TeleportTo.Name = "Teleport To"
+TeleportTo.Parent = PlayersFrame
+TeleportTo.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+TeleportTo.BorderColor3 = Color3.new(0, 0, 0)
+TeleportTo.BorderSizePixel = 0
+TeleportTo.Position = UDim2.new(0, 0, 0.713004529, 0)
+TeleportTo.Size = UDim2.new(0, 100, 0, 25)
+TeleportTo.Font = Enum.Font.Garamond
+TeleportTo.Text = "Teleport To"
+TeleportTo.TextColor3 = Color3.new(0, 0, 0)
+TeleportTo.TextScaled = true
+TeleportTo.TextSize = 14
+TeleportTo.TextWrapped = true
+
+Victim.Parent = PlayersFrame
+Victim.BackgroundColor3 = Color3.new(0, 0.196078, 0.196078)
+Victim.BorderColor3 = Color3.new(0, 0, 0)
+Victim.BorderSizePixel = 0
+Victim.ClearTextOnFocus = false
+Victim.PlaceholderText = "Victim"
+Victim.PlaceholderColor3 = Color3.new(0, .8, .8)
+Victim.Position = UDim2.new(0, 0, 0.887892365, 0)
+Victim.Size = UDim2.new(0, 100, 0, 25)
+Victim.Font = Enum.Font.Garamond
+Victim.Name = "Victim"
+Victim.Text = ""
+Victim.TextColor3 = Color3.new(0, 1, 1)
+Victim.TextScaled = true
+Victim.TextSize = 14
+Victim.TextStrokeTransparency = 0
+Victim.TextWrapped = true
+
+GameFrame.Name = "GameFrame"
+GameFrame.Parent = Menu
+GameFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+GameFrame.BorderColor3 = Color3.new(0, 1, 1)
+GameFrame.BorderSizePixel = 0
+GameFrame.Position = UDim2.new(0, 0, 1, 0)
+GameFrame.Size = UDim2.new(0, 100, 0, 223)
+GameFrame.Visible = false
+
+ClearBases.Name = "Clear Bases"
+ClearBases.Parent = GameFrame
+ClearBases.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+ClearBases.BorderColor3 = Color3.new(0, 0, 0)
+ClearBases.BorderSizePixel = 0
+ClearBases.Size = UDim2.new(0, 100, 0, 25)
+ClearBases.Font = Enum.Font.Garamond
+ClearBases.Text = "Clear Bases"
+ClearBases.TextColor3 = Color3.new(0, 0, 0)
+ClearBases.TextScaled = true
+ClearBases.TextSize = 14
+ClearBases.TextWrapped = true
+
+ClearWorkspace.Name = "Clear Workspace"
+ClearWorkspace.Parent = GameFrame
+ClearWorkspace.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+ClearWorkspace.BorderColor3 = Color3.new(0, 0, 0)
+ClearWorkspace.BorderSizePixel = 0
+ClearWorkspace.Position = UDim2.new(0, 0, 0.174887896, 0)
+ClearWorkspace.Size = UDim2.new(0, 100, 0, 25)
+ClearWorkspace.Font = Enum.Font.Garamond
+ClearWorkspace.Text = "Clear Workspace"
+ClearWorkspace.TextColor3 = Color3.new(0, 0, 0)
+ClearWorkspace.TextScaled = true
+ClearWorkspace.TextSize = 14
+ClearWorkspace.TextWrapped = true
+
+RemoveMobs.Name = "Remove Mobs"
+RemoveMobs.Parent = GameFrame
+RemoveMobs.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+RemoveMobs.BorderColor3 = Color3.new(0, 0, 0)
+RemoveMobs.BorderSizePixel = 0
+RemoveMobs.Position = UDim2.new(0, 0, 0.353031367, 0)
+RemoveMobs.Size = UDim2.new(0, 100, 0, 25)
+RemoveMobs.Font = Enum.Font.Garamond
+RemoveMobs.Text = "Remove Mobs"
+RemoveMobs.TextColor3 = Color3.new(0, 0, 0)
+RemoveMobs.TextScaled = true
+RemoveMobs.TextSize = 14
+RemoveMobs.TextWrapped = true
+
+RemoveCages.Name = "Remove Cages"
+RemoveCages.Parent = GameFrame
+RemoveCages.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+RemoveCages.BorderColor3 = Color3.new(0, 0, 0)
+RemoveCages.BorderSizePixel = 0
+RemoveCages.Position = UDim2.new(0, 0, 0.533632338, 0)
+RemoveCages.Size = UDim2.new(0, 100, 0, 25)
+RemoveCages.Font = Enum.Font.Garamond
+RemoveCages.Text = "Remove Cages"
+RemoveCages.TextColor3 = Color3.new(0, 0, 0)
+RemoveCages.TextScaled = true
+RemoveCages.TextSize = 14
+RemoveCages.TextWrapped = true
+
+PermRemoveMobs.Name = "Perm Remove Mobs"
+PermRemoveMobs.Parent = GameFrame
+PermRemoveMobs.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+PermRemoveMobs.BorderColor3 = Color3.new(0, 0, 0)
+PermRemoveMobs.BorderSizePixel = 0
+PermRemoveMobs.Position = UDim2.new(0, 0, 0.713004529, 0)
+PermRemoveMobs.Size = UDim2.new(0, 100, 0, 25)
+PermRemoveMobs.Font = Enum.Font.Garamond
+PermRemoveMobs.Text = "Perm Remove Mobs"
+PermRemoveMobs.TextColor3 = Color3.new(0, 0, 0)
+PermRemoveMobs.TextScaled = true
+PermRemoveMobs.TextSize = 14
+PermRemoveMobs.TextWrapped = true
+
+Shutdown.Name = "Shutdown"
+Shutdown.Parent = GameFrame
+Shutdown.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Shutdown.BorderColor3 = Color3.new(0, 0, 0)
+Shutdown.BorderSizePixel = 0
+Shutdown.Position = UDim2.new(0, 0, 0.887892365, 0)
+Shutdown.Size = UDim2.new(0, 100, 0, 25)
+Shutdown.Font = Enum.Font.Garamond
+Shutdown.Text = "Shutdown"
+Shutdown.TextColor3 = Color3.new(0, 0, 0)
+Shutdown.TextScaled = true
+Shutdown.TextSize = 14
+Shutdown.TextWrapped = true
+
+ToolsFrame.Name = "ToolsFrame"
+ToolsFrame.Parent = Menu
+ToolsFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+ToolsFrame.BorderColor3 = Color3.new(0, 1, 1)
+ToolsFrame.BorderSizePixel = 0
+ToolsFrame.Position = UDim2.new(0.533540155, 0, 0.995716333, 0)
+ToolsFrame.Size = UDim2.new(0, 100, 0, 144)
+ToolsFrame.Visible = false
+
+AllBtools.Name = "All Btools"
+AllBtools.Parent = ToolsFrame
+AllBtools.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+AllBtools.BorderColor3 = Color3.new(0, 0, 0)
+AllBtools.BorderSizePixel = 0
+AllBtools.Size = UDim2.new(0, 100, 0, 25)
+AllBtools.Font = Enum.Font.Garamond
+AllBtools.Text = "All Btools"
+AllBtools.TextColor3 = Color3.new(0, 0, 0)
+AllBtools.TextScaled = true
+AllBtools.TextSize = 14
+AllBtools.TextWrapped = true
+
+Move.Name = "Move"
+Move.Parent = ToolsFrame
+Move.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Move.BorderColor3 = Color3.new(0, 0, 0)
+Move.BorderSizePixel = 0
+Move.Position = UDim2.new(0, 0, 0.270165687, 0)
+Move.Size = UDim2.new(0, 100, 0, 25)
+Move.Font = Enum.Font.Garamond
+Move.Text = "Move"
+Move.TextColor3 = Color3.new(0, 0, 0)
+Move.TextScaled = true
+Move.TextSize = 14
+Move.TextWrapped = true
+
+Copy.Name = "Copy"
+Copy.Parent = ToolsFrame
+Copy.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Copy.BorderColor3 = Color3.new(0, 0, 0)
+Copy.BorderSizePixel = 0
+Copy.Position = UDim2.new(0, 0, 0.547999983, 0)
+Copy.Size = UDim2.new(0, 100, 0, 25)
+Copy.Font = Enum.Font.Garamond
+Copy.Text = "Copy"
+Copy.TextColor3 = Color3.new(0, 0, 0)
+Copy.TextScaled = true
+Copy.TextSize = 14
+Copy.TextWrapped = true
+
+Delete.Name = "Delete"
+Delete.Parent = ToolsFrame
+Delete.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Delete.BorderColor3 = Color3.new(0, 0, 0)
+Delete.BorderSizePixel = 0
+Delete.Position = UDim2.new(0, 0, 0.827000022, 0)
+Delete.Size = UDim2.new(0, 100, 0, 25)
+Delete.Font = Enum.Font.Garamond
+Delete.Text = "Delete"
+Delete.TextColor3 = Color3.new(0, 0, 0)
+Delete.TextScaled = true
+Delete.TextSize = 14
+Delete.TextWrapped = true
+
+Shutdown_2.Name = "Shutdown"
+Shutdown_2.Parent = Menu
+Shutdown_2.BackgroundColor3 = Color3.new(0, 0.501961, 0.501961)
+Shutdown_2.BorderColor3 = Color3.new(0, 0, 0)
+Shutdown_2.BorderSizePixel = 0
+Shutdown_2.Position = UDim2.new(0.617149055, 0, 10.504281, 0)
+Shutdown_2.Size = UDim2.new(0, 282, 0, 145)
+Shutdown_2.Visible = false
+
+Question.Name = "Question"
+Question.Parent = Shutdown_2
+Question.BackgroundColor3 = Color3.new(0, 0, 0)
+Question.BorderColor3 = Color3.new(0, 0, 0)
+Question.BorderSizePixel = 3
+Question.Size = UDim2.new(0, 282, 0, 52)
+Question.Font = Enum.Font.Gotham
+Question.Text = "Would you like to run a normal shutdown or a full shutdown?"
+Question.TextColor3 = Color3.new(0, 1, 1)
+Question.TextScaled = true
+Question.TextSize = 14
+Question.TextWrapped = true
+
+Normal.Name = "Normal"
+Normal.Parent = Shutdown_2
+Normal.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Normal.BorderColor3 = Color3.new(0, 0, 0)
+Normal.BorderSizePixel = 0
+Normal.Position = UDim2.new(0.0212765932, 0, 0.627586186, 0)
+Normal.Size = UDim2.new(0, 100, 0, 25)
+Normal.Font = Enum.Font.Garamond
+Normal.Text = "Normal"
+Normal.TextColor3 = Color3.new(0, 0, 0)
+Normal.TextScaled = true
+Normal.TextSize = 14
+Normal.TextWrapped = true
+
+Full.Name = "Full"
+Full.Parent = Shutdown_2
+Full.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Full.BorderColor3 = Color3.new(0, 0, 0)
+Full.BorderSizePixel = 0
+Full.Position = UDim2.new(0.6241135, 0, 0.627586186, 0)
+Full.Size = UDim2.new(0, 100, 0, 25)
+Full.Font = Enum.Font.Garamond
+Full.Text = "Full"
+Full.TextColor3 = Color3.new(0, 0, 0)
+Full.TextScaled = true
+Full.TextSize = 14
+Full.TextWrapped = true
+
+Close.Name = "Close"
+Close.Parent = Shutdown_2
+Close.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+Close.BorderColor3 = Color3.new(0, 0, 0)
+Close.BorderSizePixel = 0
+Close.Position = UDim2.new(0.453900754, 0, 0.827586234, 0)
+Close.Size = UDim2.new(0, 25, 0, 25)
+Close.Font = Enum.Font.Garamond
+Close.Text = "✕"
+Close.TextColor3 = Color3.new(0, 0, 0)
+Close.TextSize = 25
+Close.TextWrapped = true
+
+FunFrame.Name = "FunFrame"
+FunFrame.Parent = Menu
+FunFrame.BackgroundColor3 = Color3.new(0, 0, 0)
+FunFrame.BorderColor3 = Color3.new(0, 1, 1)
+FunFrame.BorderSizePixel = 0
+FunFrame.Position = UDim2.new(0.799820483, 0, 0.995716274, 0)
+FunFrame.Size = UDim2.new(0, 100, 0, 103)
+FunFrame.Visible = false
+
+CreateDeadClone.Name = "Create Dead Clone"
+CreateDeadClone.Parent = FunFrame
+CreateDeadClone.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+CreateDeadClone.BorderColor3 = Color3.new(0, 0, 0)
+CreateDeadClone.BorderSizePixel = 0
+CreateDeadClone.Size = UDim2.new(0, 100, 0, 25)
+CreateDeadClone.Font = Enum.Font.Garamond
+CreateDeadClone.Text = "Create Dead Clone"
+CreateDeadClone.TextColor3 = Color3.new(0, 0, 0)
+CreateDeadClone.TextScaled = true
+CreateDeadClone.TextSize = 14
+CreateDeadClone.TextWrapped = true
+
+SpamHeadClones.Name = "Spam Head Clones"
+SpamHeadClones.Parent = FunFrame
+SpamHeadClones.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+SpamHeadClones.BorderColor3 = Color3.new(0, 0, 0)
+SpamHeadClones.BorderSizePixel = 0
+SpamHeadClones.Position = UDim2.new(0, 0, 0.377999988, 0)
+SpamHeadClones.Size = UDim2.new(0, 100, 0, 25)
+SpamHeadClones.Font = Enum.Font.Garamond
+SpamHeadClones.Text = "Spam Head Clones"
+SpamHeadClones.TextColor3 = Color3.new(0, 0, 0)
+SpamHeadClones.TextScaled = true
+SpamHeadClones.TextSize = 14
+SpamHeadClones.TextWrapped = true
+
+SpamLimbClones.Name = "Spam Limb Clones - R6 Only"
+SpamLimbClones.Parent = FunFrame
+SpamLimbClones.BackgroundColor3 = Color3.new(0, 0.784314, 0.784314)
+SpamLimbClones.BorderColor3 = Color3.new(0, 0, 0)
+SpamLimbClones.BorderSizePixel = 0
+SpamLimbClones.Position = UDim2.new(0, 0, 0.765592214, 0)
+SpamLimbClones.Size = UDim2.new(0, 100, 0, 25)
+SpamLimbClones.Font = Enum.Font.Garamond
+SpamLimbClones.Text = "Spam Limb Clones"
+SpamLimbClones.TextColor3 = Color3.new(0, 0, 0)
+SpamLimbClones.TextScaled = true
+SpamLimbClones.TextSize = 14
+SpamLimbClones.TextWrapped = true
+
+Credit.Name = "Credit"
+Credit.Parent = Toggle
+Credit.BackgroundColor3 = Color3.new(0, 0, 0)
+Credit.BackgroundTransparency = 1
+Credit.BorderColor3 = Color3.new(0, 0, 0)
+Credit.BorderSizePixel = 0
+Credit.Position = UDim2.new(0, 0, 1, 0)
+Credit.Size = UDim2.new(0, 126, 0, 24)
+Credit.Font = Enum.Font.Gotham
+Credit.Text = "By Uctron"
+Credit.TextColor3 = Color3.new(0, 0.784314, 0.784314)
+Credit.TextSize = 14
+Credit.TextStrokeTransparency = 0
+Credit.TextWrapped = true
+Credit.TextXAlignment = Enum.TextXAlignment.Left
+
+local ButtonSound = Instance.new("Sound")
+ButtonSound.SoundId = "rbxassetid://2499155192"
+ButtonSound.Volume = 1
+ButtonSound.Name = "BTTSound"
+ButtonSound.Parent = BuilttoTrollGui
+
+function GetPlayer(String)
+    local Found = {}
+    local strl = String:lower()
+    if strl == "all" then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            table.insert(Found, v.Name)
+        end
+    elseif strl == "others" then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name ~= game.Players.LocalPlayer.Name then
+                table.insert(Found, v.Name)
+            end
+        end
+    elseif strl == "me" then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name == game.Players.LocalPlayer.Name then
+                table.insert(Found, v.Name)
+            end
+        end
+    else
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():sub(1, #String) == String:lower() then
+                table.insert(Found, v.Name)
+            end
+        end
+    end
+    return Found
+end
+
+ClearBases.MouseButton1Click:Connect(
+    function()
+        for GetBases, _1 in pairs(workspace:FindFirstChild("Bases"):GetChildren()) do
+            if _1:IsA("Model") then
+                for BaseStorages, _2 in pairs(_1:FindFirstChild("Blocks"):GetChildren()) do
+                    if _2:IsA("BasePart") then
+                        game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                            _2
+                        )
+                    end
+                end
+            end
+        end
+    end
+)
+
+ClearWorkspace.MouseButton1Click:Connect(
+    function()
+        for _, Clear in pairs(workspace:GetDescendants()) do
+            BasePart = Clear
+            if BasePart:IsA("BasePart") then
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                    Clear
+                )
+            end
+        end
+    end
+)
+
+PermRemoveMobs.MouseButton1Click:Connect(
+    function()
+        if workspace:FindFirstChild("Mobs") then
+            game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                workspace.Mobs
+            )
+        end
+    end
+)
+
+RemoveCages.MouseButton1Click:Connect(
+    function()
+        if workspace:FindFirstChild("Cages") then
+            game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                workspace.Cages
+            )
+        end
+    end
+)
+
+RemoveMobs.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(workspace.Mobs:GetChildren()) do
+            if v:IsA("Model") then
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(v)
+            end
+        end
+    end
+)
+
+Shutdown.MouseButton1Click:Connect(
+    function()
+        Shutdown_2.Visible = true
+    end
+)
+
+Close.MouseButton1Click:Connect(
+    function()
+        Shutdown_2.Visible = false
+    end
+)
+
+Normal.MouseButton1Click:Connect(
+    function()
+        for _, Shutdown in pairs(game.Players:GetPlayers()) do
+            game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(Shutdown)
+        end
+    end
+)
+
+Full.MouseButton1Click:Connect(
+    function()
+        for _, Shutdown in pairs(game:GetDescendants()) do
+            Bypass1 = Shutdown
+            Bypass2 = Shutdown
+            Bypass3 = Shutdown
+            Bypass4 = Shutdown
+            if
+                Bypass1.Name ~= "PlayerEvents" and Bypass2.Name ~= "e" .. game.Players.LocalPlayer.UserId and
+                    Bypass3.Name ~= "PlaceItem" and
+                    Bypass4.Name ~= "DestroyItem"
+             then
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                    Shutdown
+                )
+            end
+        end
+    end
+)
+
+Kick.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(GetPlayer(Victim.Text)) do
+            if game.Players:FindFirstChild(v) then
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                    game.Players:FindFirstChild(v)
+                )
+            end
+        end
+    end
+)
+
+Kill.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(GetPlayer(Victim.Text)) do
+            if game.Players:FindFirstChild(v) then
+                if game.Players:FindFirstChild(v).Character then
+                    if game.Players[v].Character:FindFirstChild("Torso") then
+                        if game.Players[v].Character.Torso:FindFirstChild("Neck") then
+                            game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                                game.Players[v].Character.Torso.Neck
+                            )
+                        end
+                    elseif game.Players[v].Character:FindFirstChild("UpperTorso") then
+                        game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                            game.Players[v].Character.UpperTorso
+                        )
+                    end
+                end
+            end
+        end
+    end
+)
+
+Punish.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(GetPlayer(Victim.Text)) do
+            if game.Players:FindFirstChild(v) then
+                if game.Players:FindFirstChild(v).Character then
+                    game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                        game.Players[v].Character
+                    )
+                end
+            end
+        end
+    end
+)
+
+Ragdoll.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(GetPlayer(Victim.Text)) do
+            if game.Players:FindFirstChild(v) then
+                if game.Players:FindFirstChild(v).Character then
+                    if game.Players:FindFirstChild(v).Character:FindFirstChild("Humanoid") then
+                        game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                            game.Players[v].Character.Humanoid
+                        )
+                    end
+                end
+            end
+        end
+    end
+)
+
+TeleportTo.MouseButton1Click:Connect(
+    function()
+        for i, v in pairs(GetPlayer(Victim.Text)) do
+            if game.Players:FindFirstChild(v) then
+                if
+                    game.Players[v].Character:FindFirstChild("HumanoidRootPart") and
+                        game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+                 then
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame =
+                        game.Players[v].Character.HumanoidRootPart.CFrame
+                end
+            end
+        end
+    end
+)
+
+AllBtools.MouseButton1Click:Connect(
+    function()
+        local LP, Camera, UIS =
+            game:GetService("Players")["LocalPlayer"],
+            workspace["CurrentCamera"],
+            game:GetService("UserInputService")
+        local Char, Mouse = LP["Character"], LP:GetMouse()
+        local Humanoid, Root = Char:FindFirstChildWhichIsA("Humanoid"), Char["HumanoidRootPart"]
+
+        local Tools = {
+            ["Move"] = Instance.new("Tool"),
+            ["Clone"] = Instance.new("Tool"),
+            ["Destroy"] = Instance.new("Tool")
+        }
+
+        Tools["Move"].TextureId = "rbxassetid://1048129653"
+        Tools["Clone"].TextureId = "rbxasset://Textures/Clone.png"
+        Tools["Destroy"].TextureId = "http://www.roblox.com/asset/?id=14808588"
+        for K, V in next, Tools do
+            V["RequiresHandle"] = false
+        end
+
+        Tools["Move"].Parent = LP.Backpack
+        Tools["Clone"].Parent = LP.Backpack
+        Tools["Destroy"].Parent = LP.Backpack
+
+        local Delete = function(Obj)
+            game:GetService("ReplicatedStorage").PlayerEvents["e" .. LP["UserId"]].DestroyItem:FireServer(Obj)
+        end
+
+        local Place = function(CFrame, Obj)
+            game:GetService("ReplicatedStorage").PlayerEvents["e" .. LP["UserId"]].PlaceItem:FireServer(CFrame, Obj)
+        end
+
+        local IgnoreList = {}
+
+        for K, V in next, workspace:GetDescendants() do
+            if V:IsA("Part") or V:IsA("BasePart") then
+                if rawequal(V["Transparency"], 1) then
+                    table.insert(IgnoreList, V)
+                end
+            end
+        end
+
+        for K, V in next, Char:GetDescendants() do
+            if V:IsA("Part") or V:IsA("BasePart") then
+                table.insert(IgnoreList, V)
+            end
+        end
+
+        workspace.DescendantAdded:Connect(
+            function(Obj)
+                if Obj:IsA("Part") or Obj:IsA("BasePart") then
+                    if rawequal(Obj["Transparency"], 1) then
+                        table.insert(IgnoreList, Obj)
+                    end
+                end
+            end
+        )
+
+        local PointInfo = function(X, Y)
+            local RayA = Camera:ScreenPointToRay(X, Y)
+            local RayB = Ray.new(RayA.Origin, RayA.Direction * 1.0e3)
+            local Target, Position = workspace:FindPartOnRayWithIgnoreList(RayB, IgnoreList)
+            return {Target, Position}
+        end
+
+        Tools["Destroy"].Deactivated:Connect(
+            function()
+                local Obj = PointInfo(Mouse.X, Mouse.Y)[1]
+                Delete(Obj)
+            end
+        )
+
+        Tools["Clone"].Equipped:Connect(
+            function(Mouse)
+                Mouse.Icon = "rbxasset://textures/CloneCursor.png"
+            end
+        )
+
+        Tools["Clone"].Unequipped:Connect(
+            function()
+                game.Players.LocalPlayer:GetMouse().Icon = ""
+            end
+        )
+
+        Tools["Destroy"].Equipped:Connect(
+            function(Mouse)
+                Mouse.Icon = "rbxasset://textures/HammerCursor.png"
+            end
+        )
+
+        Tools["Destroy"].Unequipped:Connect(
+            function()
+                game.Players.LocalPlayer:GetMouse().Icon = ""
+            end
+        )
+
+        local Moving
+        Tools["Move"].Activated:Connect(
+            function()
+                Moving = PointInfo(Mouse.X, Mouse.Y)[1]
+                table.insert(IgnoreList, Moving)
+                local ObjInList = #IgnoreList
+                repeat
+                    Mouse.Move:Wait()
+                    Moving.CFrame = CFrame.new(PointInfo(Mouse.X, Mouse.Y)[2] + Vector3.new(0, Moving.Size.Y / 2, 0))
+                until #UIS:GetMouseButtonsPressed() < 1
+                IgnoreList[ObjInList] = nil
+            end
+        )
+
+        Tools["Move"].Deactivated:Connect(
+            function()
+                Delete(Moving)
+                Place(Moving.CFrame, Moving)
+            end
+        )
+
+        Tools["Clone"].Activated:Connect(
+            function()
+                Moving = PointInfo(Mouse.X, Mouse.Y)[1]
+                wait(.2)
+                table.insert(IgnoreList, Moving)
+                local ObjInList = #IgnoreList
+                if #UIS:GetMouseButtonsPressed() > 0 then
+                    repeat
+                        game:GetService("RunService").RenderStepped:Wait()
+                        Moving.CFrame =
+                            CFrame.new(PointInfo(Mouse.X, Mouse.Y)[2] + Vector3.new(0, Moving.Size.Y / 2, 0))
+                    until #UIS:GetMouseButtonsPressed() < 1
+                    Place(Moving.CFrame, Moving)
+                else
+                    Place(Moving.CFrame + Vector3.new(0, Moving.Size.Y, 0), Moving)
+                end
+                IgnoreList[ObjInList] = nil
+            end
+        )
+    end
+)
+
+Copy.MouseButton1Click:Connect(
+    function()
+        local CopyTool = Instance.new("Tool")
+
+        CopyTool.Name = "CopyTool"
+        CopyTool.RequiresHandle = false
+        CopyTool.Activated:Connect(
+            function()
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].PlaceItem:FireServer(
+                    game.Players.LocalPlayer:GetMouse().Target.CFrame +
+                        Vector3.new(0, game.Players.LocalPlayer:GetMouse().Target.Size.Y, 0),
+                    game.Players.LocalPlayer:GetMouse().Target
+                )
+            end
+        )
+
+        CopyTool.Equipped:Connect(
+            function(Mouse)
+                Mouse.Icon = "rbxasset://textures/CloneCursor.png"
+            end
+        )
+
+        CopyTool.Unequipped:Connect(
+            function()
+                game.Players.LocalPlayer:GetMouse().Icon = ""
+            end
+        )
+
+        CopyTool.TextureId = "rbxasset://Textures/Clone.png"
+        CopyTool.Parent = game.Players.LocalPlayer.Backpack
+    end
+)
+
+Move.MouseButton1Click:Connect(
+    function()
+        local MoveTool = Instance.new("Tool")
+
+        local Moving
+        local Target
+
+        MoveTool.Name = "MoveTool"
+        MoveTool.RequiresHandle = false
+        MoveTool.Activated:Connect(
+            function()
+                Moving = true
+                Target = game.Players.LocalPlayer:GetMouse().Target
+                repeat
+                    game.Players.LocalPlayer:GetMouse().Move:Wait()
+                    Target.CFrame = CFrame.new(game.Players.LocalPlayer:GetMouse().Hit.p)
+                    game.Players.LocalPlayer:GetMouse().TargetFilter = Target
+                until Moving == false
+            end
+        )
+        MoveTool.Deactivated:Connect(
+            function()
+                Moving = false
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                    Target
+                )
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].PlaceItem:FireServer(
+                    Target.CFrame,
+                    Target
+                )
+            end
+        )
+
+        MoveTool.TextureId = "rbxassetid://1048129653"
+        MoveTool.Parent = game.Players.LocalPlayer.Backpack
+    end
+)
+
+Delete.MouseButton1Click:Connect(
+    function()
+        local DeleteTool = Instance.new("Tool")
+
+        DeleteTool.Name = "DeleteTool"
+        DeleteTool.RequiresHandle = false
+        DeleteTool.Activated:Connect(
+            function()
+                game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].DestroyItem:FireServer(
+                    game.Players.LocalPlayer:GetMouse().Target
+                )
+            end
+        )
+
+        DeleteTool.Equipped:Connect(
+            function(Mouse)
+                Mouse.Icon = "rbxasset://textures/HammerCursor.png"
+            end
+        )
+
+        DeleteTool.Unequipped:Connect(
+            function()
+                game.Players.LocalPlayer:GetMouse().Icon = ""
+            end
+        )
+
+        DeleteTool.TextureId = "http://www.roblox.com/asset/?id=14808588"
+        DeleteTool.Parent = game.Players.LocalPlayer.Backpack
+    end
+)
+
+CreateDeadClone.MouseButton1Click:Connect(
+    function()
+        Plr = game.Players.LocalPlayer
+        Char = Plr.Character
+        Head = Char:FindFirstChild("Head")
+        Torso = Char:FindFirstChild("Torso")
+        L_A = Char:FindFirstChild("Left Arm")
+        R_A = Char:FindFirstChild("Right Arm")
+        L_L = Char:FindFirstChild("Left Leg")
+        local R_L = Char:FindFirstChild("Right Leg")
+        Create = game.ReplicatedStorage.PlayerEvents["e" .. Plr.UserId].PlaceItem
+
+        if Head and Torso and L_A and R_A and L_L and R_L then
+            Head.Anchored = true
+            Create:FireServer(Head.CFrame, Head)
+            Create:FireServer(Torso.CFrame, Torso)
+            Create:FireServer(L_A.CFrame, L_A)
+            Create:FireServer(R_A.CFrame, R_A)
+            Create:FireServer(L_L.CFrame, L_L)
+            Create:FireServer(R_L.CFrame, R_L)
+
+            if Torso:FindFirstChild("Neck") then
+                Torso:FindFirstChild("Neck"):Destroy()
+            end
+        else
+            warn("Missing BasePart!")
+        end
+    end
+)
+
+SpamHeadClones.MouseButton1Click:Connect(
+    function()
+        GetHumanoid = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid")
+
+        function CloneHead()
+            CreateX = game.Players.LocalPlayer.Character:FindFirstChild("Head").CFrame.X
+            CreateY = game.Players.LocalPlayer.Character:FindFirstChild("Head").CFrame.Y
+            CreateZ = game.Players.LocalPlayer.Character:FindFirstChild("Head").CFrame.Z
+            Initialize_Coordinates = {
+                Initialize_XCoordinate = 0,
+                Initialize_YCoordinate = 1,
+                Initialize_ZCoordinate = 2
+            }
+            Initialize_Coordinates.Initialize_XCoordinate = CreateX
+            Initialize_Coordinates.Initialize_YCoordinate = CreateY
+            Initialize_Coordinates.Initialize_ZCoordinate = CreateZ
+
+            game.ReplicatedStorage.PlayerEvents["e" .. game.Players.LocalPlayer.UserId].PlaceItem:FireServer(
+                CFrame.new(
+                    Initialize_Coordinates.Initialize_XCoordinate,
+                    Initialize_Coordinates.Initialize_YCoordinate,
+                    Initialize_Coordinates.Initialize_ZCoordinate
+                ),
+                game.Players.LocalPlayer.Character:FindFirstChild("Head")
+            )
+        end
+
+        function EndSpam()
+            Spam:Disconnect()
+        end
+
+        local Hint = Instance.new("Hint")
+        Hint.Text = "Reset to stop"
+        spawn(
+            function()
+                wait(3)
+                Hint:Destroy()
+            end
+        )
+
+        Spam = game.RunService.Heartbeat:Connect(CloneHead)
+        GetHumanoid.Died:Connect(EndSpam)
+    end
+)
+
+SpamLimbClones.MouseButton1Click:Connect(
+    function()
+        Plr = game.Players.LocalPlayer
+        Char = Plr.Character
+        Torso = Char:FindFirstChild("Torso")
+        GetHumanoid = Char:FindFirstChild("Humanoid")
+
+        Create = game.ReplicatedStorage.PlayerEvents["e" .. Plr.UserId].PlaceItem
+
+        L_A = Char["Left Arm"]
+        R_A = Char["Right Arm"]
+        L_L = Char["Left Leg"]
+        R_L = Char["Right Leg"]
+
+        local Hint = Instance.new("Hint")
+        Hint.Text = "Reset to stop"
+        spawn(
+            function()
+                wait(3)
+                Hint:Destroy()
+            end
+        )
+
+        Limbs = {
+            LeftArm = 0,
+            RightArm = 1,
+            LeftLeg = 2,
+            RightLeg = 3
+        }
+
+        Limbs.LeftArm = L_A
+        Limbs.RightArm = R_A
+        Limbs.LeftLeg = L_L
+        Limbs.RightLeg = R_L
+
+        function CloneLimbs()
+            LeftArmCoordinate = Limbs.LeftArm.CFrame
+            RightArmCoordinate = Limbs.RightArm.CFrame
+            LeftLegCoordinate = Limbs.LeftLeg.CFrame
+            RightLegCoordinate = Limbs.RightLeg.CFrame
+
+            Create:FireServer(LeftArmCoordinate, Limbs.LeftArm)
+            Create:FireServer(RightArmCoordinate, Limbs.RightArm)
+            Create:FireServer(LeftLegCoordinate, Limbs.LeftLeg)
+            Create:FireServer(RightLegCoordinate, Limbs.RightLeg)
+        end
+
+        Loop = game.RunService.Heartbeat:Connect(CloneLimbs)
+        GetHumanoid.Died:Connect(
+            function()
+                Loop:Disconnect()
+            end
+        )
+    end
+)
+
+GameX.MouseButton1Click:Connect(
+    function()
+        GameFrame.Visible = not GameFrame.Visible
+    end
+)
+
+Players.MouseButton1Click:Connect(
+    function()
+        PlayersFrame.Visible = not PlayersFrame.Visible
+    end
+)
+
+Tools.MouseButton1Click:Connect(
+    function()
+        ToolsFrame.Visible = not ToolsFrame.Visible
+    end
+)
+
+Fun.MouseButton1Click:Connect(
+    function()
+        FunFrame.Visible = not FunFrame.Visible
+    end
+)
+
+Toggle.MouseButton1Click:Connect(
+    function()
+        ToggleGuis = not ToggleGuis
+        if ToggleGuis == true then
+            GameFrame.Visible = false
+            PlayersFrame.Visible = false
+            ToolsFrame.Visible = false
+            FunFrame.Visible = false
+            Shutdown_2.Visible = false
+            Menu.Visible = true
+        elseif ToggleGuis == false then
+            GameFrame.Visible = false
+            PlayersFrame.Visible = false
+            ToolsFrame.Visible = false
+            FunFrame.Visible = false
+            Shutdown_2.Visible = false
+            Menu.Visible = false
+        end
+    end
+)
+
+for i, v in pairs(BuilttoTrollGui:GetDescendants()) do
+    if v:IsA("TextButton") then
+        CreateButtonSoundClone = ButtonSound:Clone()
+        CreateButtonSoundClone.Parent = v
+        v.MouseButton1Click:Connect(
+            function()
+                CreateButtonSoundClone:Play()
+            end
+        )
+    end
+end
+
+function Toggling()
+    if GameFrame.Visible == true then
+        GameX.Text = "Game | -"
+    elseif GameFrame.Visible == false then
+        GameX.Text = "Game | +"
+    end
+    if PlayersFrame.Visible == true then
+        Players.Text = "Players | -"
+    elseif PlayersFrame.Visible == false then
+        Players.Text = "Players | +"
+    end
+    if ToolsFrame.Visible == true then
+        Tools.Text = "Tools | -"
+    elseif ToolsFrame.Visible == false then
+        Tools.Text = "Tools | +"
+    end
+    if FunFrame.Visible == true then
+        Fun.Text = "Fun | -"
+    elseif FunFrame.Visible == false then
+        Fun.Text = "Fun | +"
+    end
+end
+
+game.RunService.Heartbeat:Connect(Toggling)
